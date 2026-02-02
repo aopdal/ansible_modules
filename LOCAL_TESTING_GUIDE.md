@@ -50,10 +50,11 @@ ansible --version
 
 ### Python Environment Setup
 
-**Option 1: Using Poetry (Recommended)**
+#### Option 1: Using Poetry (Recommended)
 
 ```bash
-cd /home/arne/code/ansible_modules
+# Navigate to the cloned repository
+cd /path/to/ansible_modules
 
 # Install dependencies
 poetry install
@@ -62,7 +63,7 @@ poetry install
 poetry shell
 ```
 
-**Option 2: Using virtualenv**
+#### Option 2: Using virtualenv
 
 ```bash
 # Create virtualenv
@@ -79,7 +80,7 @@ pip install pytest pytest-mock pytest-xdist pytest-forked coverage deepdiff
 
 Ansible collections **must** be in a specific directory structure:
 
-```
+```text
 ansible_collections/
 └── netbox/
     └── netbox/
@@ -387,9 +388,9 @@ This script automatically:
 ### Manual Setup (Alternative)
 
 <details>
-<summary>Click to expand manual Docker setup instructions</summary>
+**Click to expand manual Docker setup instructions**
 
-**Step 1: Start NetBox Docker**
+#### Step 1: Start NetBox Docker
 
 Choose a NetBox version (v4.0, v4.1, v4.2, or v4.3):
 
@@ -403,7 +404,7 @@ cd netbox-docker
 export VERSION=v4.3
 
 # Copy the test override config
-cp /home/arne/code/ansible_modules/tests/netbox-docker/v4.3/docker-compose.override.yml .
+cp /path/to/ansible_modules/tests/netbox-docker/v4.3/docker-compose.override.yml .
 
 # Start NetBox (runs in background with -d flag)
 docker-compose pull
@@ -421,10 +422,11 @@ curl http://localhost:32768/api/
 # Should return API version info
 ```
 
-**Step 2: Pre-populate Test Data**
+#### Step 2: Pre-populate Test Data**
 
 ```bash
-cd /home/arne/code/ansible_modules
+# Navigate to the repository root
+cd /path/to/ansible_modules
 
 # Run the deployment script to create test objects
 python tests/integration/netbox-deploy.py
@@ -437,7 +439,7 @@ curl -H "Authorization: Token 0123456789abcdef0123456789abcdef01234567" \
 
 **Note**: The script expects NetBox at `http://localhost:32768` with token `0123456789abcdef0123456789abcdef01234567`
 
-**Step 3: Run Integration Tests**
+#### Step 3: Run Integration Tests**
 
 ```bash
 # Activate venv and detect Python version
@@ -452,25 +454,25 @@ ansible-test integration -v --python "${PYTHON_VERSION}" inventory-v4.3
 ansible-test integration -v --python "${PYTHON_VERSION}" regression-v4.3
 ```
 
-**Step 4: Inventory Tests (Special Case)
+#### Step 4: Inventory Tests (Special Case)
 
 Inventory tests compare `ansible-inventory --list` output against expected JSON.
 
-**Manual inventory test run**:
+Manual inventory test run:
 
 ```bash
 cd tests/integration/targets/inventory-v4.3/
 ./runme.sh
 ```
 
-**Update test data** (after inventory plugin changes):
+Update test data (after inventory plugin changes):
 
 ```bash
 # From repo root
 ./hacking/update_test_inventories.sh
 ```
 
-**Step 5: Cleanup**
+#### Step 5: Cleanup
 
 ```bash
 # Stop NetBox Docker

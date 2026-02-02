@@ -36,9 +36,9 @@ Examples:
 
 Test Version Mapping:
   v4.0 tests → NetBox v4.0 image
-  v4.1 tests → NetBox v4.1 image
-  v4.2 tests → NetBox v4.2 image
-  v4.3 tests → NetBox v4.3 image
+  v4.1 tests → NetBox v4.1 image (netbox-docker 3.0.2)
+  v4.2 tests → NetBox v4.2 image (netbox-docker 3.2.1)
+  v4.3 tests → NetBox v4.3 image (netbox-docker 3.3.0)
   v4.4 tests → NetBox v4.4 image
   v4.5 tests → NetBox v4.5 image (latest)
 
@@ -72,25 +72,58 @@ check_docker() {
 }
 
 clone_netbox_docker() {
+    local VERSION="${1:-$DEFAULT_VERSION}"
+    
+    # Map NetBox versions to netbox-docker versions
+    local DOCKER_VERSION="release"
+    case "$VERSION" in
+        v4.1)
+            DOCKER_VERSION="3.0.2"
+            ;;
+        v4.2)
+            DOCKER_VERSION="3.2.1"
+            ;;
+        v4.3)
+            DOCKER_VERSION="3.3.0"
+            ;;
+        *)
+            DOCKER_VERSION="release"
+            ;;
+    esac
+    
     if [ ! -d "$NETBOX_DOCKER_DIR" ]; then
-        echo "Cloning netbox-docker (release branch)..."
-        git clone --branch release --single-branch https://github.com/netbox-community/netbox-docker.git "$NETBOX_DOCKER_DIR"
+        echo "Cloning netbox-docker..."
+        git clone https://github.com/netbox-community/netbox-docker.git "$NETBOX_DOCKER_DIR"
     else
         echo "Using existing netbox-docker at $NETBOX_DOCKER_DIR"
-        cd "$NETBOX_DOCKER_DIR"
-        echo "Pulling latest changes from release branch..."
-        git fetch origin release 2>/dev/null || true
-        git checkout release 2>/dev/null || true
-        git pull origin release 2>/dev/null || true
-        cd - > /dev/null
     fi
+    
+    cd "$NETBOX_DOCKER_DIR"
+    
+    # Fetch all branches and tags
+    echo "Fetching netbox-docker repository..."
+    git fetch origin 2>/dev/null || true
+    
+    # Checkout the appropriate version
+    echo "Checking out netbox-docker $DOCKER_VERSION for NetBox $VERSION..."
+    git checkout "$DOCKER_VERSION" 2>/dev/null || {
+        echo "ERROR: Failed to checkout netbox-docker $DOCKER_VERSION"
+        exit 1
+    }
+    
+    # Pull latest if on a branch
+    if [ "$DOCKER_VERSION" = "release" ]; then
+        git pull origin release 2>/dev/null || true
+    fi
+    
+    cd - > /dev/null
 }
 
 start_netbox() {
     local VERSION="${1:-$DEFAULT_VERSION}"
 
     check_docker
-    clone_netbox_docker
+    clone_netbox_docker "$VERSION"
 
     echo "================================"
     echo "Starting NetBox $VERSION"
