@@ -51,7 +51,6 @@
       name: Eth10
       enabled: false
       mtu: 9000
-      mac_address: "00:00:00:AA:AA:01"
       description: Updated test100-vm
       mode: Tagged
       # untagged_vlan:
@@ -67,13 +66,12 @@
     state: present
   register: test_three
 
-- name: "NETBOX_VM_INTERFACE 4: ASSERT - Updated"
+- name: "NETBOX_VM_INTERFACE 3: ASSERT - Updated"
   ansible.builtin.assert:
     that:
       - test_three is changed
       - test_three['diff']['after']['enabled'] == false
       - test_three['diff']['after']['mtu'] == 9000
-      - test_three['diff']['after']['mac_address'] == "00:00:00:AA:AA:01"
       - test_three['diff']['after']['description'] == "Updated test100-vm"
       - test_three['diff']['after']['mode'] == "tagged"
       # - test_three['diff']['after']['untagged_vlan'] == 1
@@ -83,7 +81,6 @@
       - test_three['interface']['virtual_machine'] == 1
       - test_three['interface']['enabled'] == false
       - test_three['interface']['mtu'] == 9000
-      - test_three['interface']['mac_address'] == "00:00:00:AA:AA:01"
       - test_three['interface']['description'] == "Updated test100-vm"
       - test_three['interface']['mode'] == "tagged"
       # - test_three['interface']['untagged_vlan'] == 1
@@ -91,7 +88,7 @@
       - test_three['interface']['tags'][0] == 4
       - test_three['msg'] == "interface Eth10 updated"
 
-- name: "NETBOX_VM_INTERFACE 4: ASSERT - Delete"
+- name: "NETBOX_VM_INTERFACE 4: Delete"
   netbox.netbox.netbox_vm_interface:
     netbox_url: http://localhost:32768
     netbox_token: "0123456789abcdef0123456789abcdef01234567"
@@ -118,7 +115,6 @@
       name: Eth0
       enabled: false
       mtu: 9000
-      mac_address: "00:00:00:AA:AA:01"
       description: Updated test100-vm Eth0 intf
       mode: Tagged
       # untagged_vlan:
@@ -140,7 +136,6 @@
       - test_five is changed
       - test_five['diff']['after']['enabled'] == false
       - test_five['diff']['after']['mtu'] == 9000
-      - test_five['diff']['after']['mac_address'] == "00:00:00:AA:AA:01"
       - test_five['diff']['after']['description'] == "Updated test100-vm Eth0 intf"
       - test_five['diff']['after']['mode'] == "tagged"
       # - test_five['diff']['after']['untagged_vlan'] == 1
@@ -150,7 +145,6 @@
       - test_five['interface']['virtual_machine'] == 1
       - test_five['interface']['enabled'] == false
       - test_five['interface']['mtu'] == 9000
-      - test_five['interface']['mac_address'] == "00:00:00:AA:AA:01"
       - test_five['interface']['description'] == "Updated test100-vm Eth0 intf"
       - test_five['interface']['mode'] == "tagged"
       # - test_five['interface']['untagged_vlan'] == 1

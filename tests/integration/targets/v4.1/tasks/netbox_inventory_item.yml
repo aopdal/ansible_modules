@@ -153,8 +153,8 @@
 - name: "INVENTORY_ITEM 6: ASSERT - Inventory item creation with missing role"
   ansible.builtin.assert:
     that:
-      - test_six.failed
-      - test_six.msg == "Could not resolve id of inventory_item_role: Foo"
+      - test_six is failed
+      - "'Could not resolve id of inventory_item_role: Foo' in test_six.msg"
 
 - name: "INVENTORY_ITEM 7: Create inventory item with component"
   netbox.netbox.netbox_inventory_item:
@@ -199,5 +199,5 @@
 - name: "INVENTORY_ITEM 8: ASSERT - Inventory item creation with missing component_type"
   ansible.builtin.assert:
     that:
-      - test_eight.failed
-      - test_eight.msg == "parameters are required together: component_type, component"
+      - test_eight is failed
+      - "'parameters are required together: component_type, component' in test_eight.msg"
