@@ -7,7 +7,11 @@
 - name: "VLAN_GROUP 1: Necessary info creation"
   netbox.netbox.netbox_vlan_group:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       name: VLAN Group One
       scope_type: dcim.site
@@ -30,7 +34,11 @@
 - name: "VLAN_GROUP 2: Create duplicate"
   netbox.netbox.netbox_vlan_group:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       name: VLAN Group One
       scope_type: dcim.site
@@ -51,7 +59,11 @@
 - name: "VLAN_GROUP 3: ASSERT - Create with same name, different site"
   netbox.netbox.netbox_vlan_group:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       name: VLAN Group One
       scope_type: dcim.site
@@ -72,7 +84,11 @@
 - name: "VLAN_GROUP 4: ASSERT - Create vlan group, no site"
   netbox.netbox.netbox_vlan_group:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       name: VLAN Group One
     state: present
@@ -88,7 +104,11 @@
 - name: "VLAN_GROUP 5: ASSERT - Delete"
   netbox.netbox.netbox_vlan_group:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       name: VLAN Group One
       scope_type: dcim.site
@@ -111,7 +131,11 @@
 - name: "VLAN_GROUP 6: ASSERT - Delete non existing"
   netbox.netbox.netbox_vlan_group:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       name: VLAN Group One
       scope_type: dcim.site
@@ -129,7 +153,11 @@
 - name: "VLAN_GROUP 7: Necessary info creation - scope_type: dcim.location"
   netbox.netbox.netbox_vlan_group:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       name: VLAN Group Location
       scope_type: dcim.location
@@ -152,7 +180,11 @@
 - name: "VLAN_GROUP 8: Necessary info creation - scope_type: dcim.rack"
   netbox.netbox.netbox_vlan_group:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       name: VLAN Group Rack
       scope_type: dcim.rack
@@ -175,7 +207,11 @@
 - name: "VLAN_GROUP 9: Necessary info creation - scope_type: dcim.region"
   netbox.netbox.netbox_vlan_group:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       name: VLAN Group Region
       scope_type: dcim.region
@@ -198,7 +234,11 @@
 - name: "VLAN_GROUP 10: Necessary info creation - scope_type: dcim.sitegroup"
   netbox.netbox.netbox_vlan_group:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       name: VLAN Group Site Group
       scope_type: dcim.sitegroup
@@ -268,7 +308,11 @@
 - name: "VLAN_GROUP 12: Update Description - scope_type: dcim.location"
   netbox.netbox.netbox_vlan_group:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       name: VLAN Group Location
       scope_type: dcim.location
@@ -293,7 +337,11 @@
 - name: "VLAN_GROUP 12: Update Description (IDEM) - scope_type: dcim.location"
   netbox.netbox.netbox_vlan_group:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       name: VLAN Group Location
       scope_type: dcim.location
@@ -312,6 +360,7 @@
       - results['vlan_group']['scope_id'] == 1
       - results['vlan_group']['description'] == "Ansible updated description"
       - results['msg'] == "vlan_group VLAN Group Location already exists"
+<<<<<<< HEAD
 
 - name: "VLAN_GROUP 13: Create VLAN group with tenant"
   netbox.netbox.netbox_vlan_group:
@@ -398,3 +447,5 @@
       - results['diff']['before']['state'] == "present"
       - results['diff']['after']['state'] == "absent"
       - results['msg'] == "vlan_group VLAN Group Tenant Test deleted"
+=======
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)

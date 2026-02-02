@@ -7,7 +7,11 @@
 - name: "MODULE_TYPE 1: Necessary info creation"
   netbox.netbox.netbox_module_type:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       model: ws-test-3750
       manufacturer: Test Manufacturer
@@ -27,7 +31,11 @@
 - name: "MODULE_TYPE 2: Create duplicate"
   netbox.netbox.netbox_module_type:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       model: ws-test-3750
       manufacturer: Test Manufacturer
@@ -45,7 +53,11 @@
 - name: "MODULE_TYPE 3: ASSERT - Update"
   netbox.netbox.netbox_module_type:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       model: ws-test-3750
       manufacturer: Test Manufacturer
@@ -66,7 +78,11 @@
 - name: "MODULE_TYPE 4: ASSERT - Delete"
   netbox.netbox.netbox_module_type:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       model: ws-test-3750
     state: absent
@@ -83,7 +99,11 @@
 - name: "MODULE_TYPE 5: ASSERT - Delete non existing"
   netbox.netbox.netbox_module_type:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       model: Test Module Type
     state: absent

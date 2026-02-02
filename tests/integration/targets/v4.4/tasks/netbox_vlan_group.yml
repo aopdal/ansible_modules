@@ -312,6 +312,7 @@
       - results['vlan_group']['scope_id'] == 1
       - results['vlan_group']['description'] == "Ansible updated description"
       - results['msg'] == "vlan_group VLAN Group Location already exists"
+<<<<<<< HEAD
 
 - name: "VLAN_GROUP 13: Create VLAN group with tenant"
   netbox.netbox.netbox_vlan_group:
@@ -398,3 +399,5 @@
       - results['diff']['before']['state'] == "present"
       - results['diff']['after']['state'] == "absent"
       - results['msg'] == "vlan_group VLAN Group Tenant Test deleted"
+=======
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)

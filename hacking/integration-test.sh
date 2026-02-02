@@ -57,10 +57,13 @@ PREREQUISITES:
   2. Test data must be populated:
      ./netbox-docker-helper.sh populate
 
+<<<<<<< HEAD
   Note: For v4.5+, a v2 API token is automatically provisioned and loaded.
         The token is saved to /tmp/netbox-token.env and automatically
         sourced by this script.
 
+=======
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 EXAMPLES:
   # Run main module tests for v4.3
   ./hacking/integration-test.sh v4.3
@@ -114,6 +117,7 @@ setup_collection() {
 
     cd "$REPO_DIR"
 
+<<<<<<< HEAD
     # Load NetBox token if available (needed for v4.5+ v2 tokens)
     if [ -f "/tmp/netbox-token.env" ]; then
         echo "Loading NETBOX_TOKEN from /tmp/netbox-token.env"
@@ -127,6 +131,8 @@ setup_collection() {
         echo "ℹ No NETBOX_TOKEN found (using default v1 token fallback)"
     fi
 
+=======
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     # Build and install the collection
     ./hacking/build.sh
 
@@ -152,6 +158,7 @@ run_test() {
     echo "================================"
     echo "Running integration tests: $target"
     echo "================================"
+<<<<<<< HEAD
     
     # Write NETBOX_TOKEN to a file that can be read by ansible
     if [ -n "${NETBOX_TOKEN:-}" ]; then
@@ -176,6 +183,8 @@ EOF
         fi
     fi
     
+=======
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     ansible-test integration -v --color yes --requirements "$target"
 }
 
@@ -202,6 +211,7 @@ run_all_tests() {
     echo "Running ALL integration tests for $version"
     echo "Targets: ${targets[*]}"
     echo "================================"
+<<<<<<< HEAD
     
     # Ensure NETBOX_TOKEN is exported for ansible-test
     if [ -n "${NETBOX_TOKEN:-}" ]; then
@@ -211,6 +221,8 @@ run_all_tests() {
         chmod 600 /tmp/.netbox_test_token
         export NETBOX_TOKEN
     fi
+=======
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
     for target in "${targets[@]}"; do
         echo ""

@@ -7,7 +7,11 @@
 - name: "MODULE 1: Necessary info creation"
   netbox.netbox.netbox_module_bay:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: C9300-DEMO
       name: Network Module
@@ -29,7 +33,11 @@
 - name: "MODULE BAY 2: Create duplicate"
   netbox.netbox.netbox_module_bay:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: C9300-DEMO
       name: Network Module
@@ -49,7 +57,11 @@
 - name: "MODULE BAY 3: ASSERT - Update"
   netbox.netbox.netbox_module_bay:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: C9300-DEMO
       name: Network Module
@@ -72,7 +84,11 @@
 - name: "MODULE BAY 4: ASSERT - Delete"
   netbox.netbox.netbox_module_bay:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: C9300-DEMO
       name: Network Module
@@ -90,7 +106,11 @@
 - name: "MODULE BAY 5: ASSERT - Delete non existing"
   netbox.netbox.netbox_module_bay:
     netbox_url: http://localhost:32768
+<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
+=======
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: C9300-DEMO
       name: Network Module

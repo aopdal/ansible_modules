@@ -73,7 +73,7 @@
       - test_three is changed
       - test_three['diff']['after']['enabled'] == false
       - test_three['diff']['after']['mtu'] == 9000
-      - test_three['diff']['after']['mac_address'] == "00:00:00:AA:AA:01"
+      - test_three['diff']['after']['mac_address'] == "00:00:00:aa:aa:01"
       - test_three['diff']['after']['description'] == "Updated test100-vm"
       - test_three['diff']['after']['mode'] == "tagged"
       # - test_three['diff']['after']['untagged_vlan'] == 1
@@ -83,7 +83,7 @@
       - test_three['interface']['virtual_machine'] == 1
       - test_three['interface']['enabled'] == false
       - test_three['interface']['mtu'] == 9000
-      - test_three['interface']['mac_address'] == "00:00:00:AA:AA:01"
+      - test_three['interface']['mac_address'] == "00:00:00:aa:aa:01"
       - test_three['interface']['description'] == "Updated test100-vm"
       - test_three['interface']['mode'] == "tagged"
       # - test_three['interface']['untagged_vlan'] == 1
@@ -140,7 +140,7 @@
       - test_five is changed
       - test_five['diff']['after']['enabled'] == false
       - test_five['diff']['after']['mtu'] == 9000
-      - test_five['diff']['after']['mac_address'] == "00:00:00:AA:AA:01"
+      - test_five['diff']['after']['mac_address'] == "00:00:00:aa:aa:01"
       - test_five['diff']['after']['description'] == "Updated test100-vm Eth0 intf"
       - test_five['diff']['after']['mode'] == "tagged"
       # - test_five['diff']['after']['untagged_vlan'] == 1
@@ -150,7 +150,7 @@
       - test_five['interface']['virtual_machine'] == 1
       - test_five['interface']['enabled'] == false
       - test_five['interface']['mtu'] == 9000
-      - test_five['interface']['mac_address'] == "00:00:00:AA:AA:01"
+      - test_five['interface']['mac_address'] == "00:00:00:aa:aa:01"
       - test_five['interface']['description'] == "Updated test100-vm Eth0 intf"
       - test_five['interface']['mode'] == "tagged"
       # - test_five['interface']['untagged_vlan'] == 1

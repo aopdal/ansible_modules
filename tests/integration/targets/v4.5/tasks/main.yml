@@ -368,6 +368,7 @@
   tags:
     - netbox_rear_port_template
 
+<<<<<<< HEAD
 # module must be updated for 4.5
 # - name: NETBOX_FRONT_PORT TESTS
 #   ansible.builtin.include_tasks:
@@ -386,6 +387,25 @@
 #         - netbox_front_port_template
 #   tags:
 #     - netbox_front_port_template
+=======
+- name: NETBOX_FRONT_PORT TESTS
+  ansible.builtin.include_tasks:
+    file: netbox_front_port.yml
+    apply:
+      tags:
+        - netbox_front_port
+  tags:
+    - netbox_front_port
+
+- name: NETBOX_FRONT_PORT_TEMPLATE TESTS
+  ansible.builtin.include_tasks:
+    file: netbox_front_port_template.yml
+    apply:
+      tags:
+        - netbox_front_port_template
+  tags:
+    - netbox_front_port_template
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
 - name: NETBOX_CONSOLE_PORT TESTS
   ansible.builtin.include_tasks:
@@ -513,6 +533,7 @@
   tags:
     - netbox_permission
 
+<<<<<<< HEAD
 # Module has to be updated for 4.5
 # - name: NETBOX_TOKEN_TESTS
 #   ansible.builtin.include_tasks:
@@ -522,6 +543,16 @@
 #         - netbox_token
 #   tags:
 #     - netbox_token
+=======
+- name: NETBOX_TOKEN_TESTS
+  ansible.builtin.include_tasks:
+    file: netbox_token.yml
+    apply:
+      tags:
+        - netbox_token
+  tags:
+    - netbox_token
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
 # Module has to be updated for 3.3
 # - name: "NETBOX_CABLE TESTS"

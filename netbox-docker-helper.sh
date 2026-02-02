@@ -36,15 +36,24 @@ Examples:
 
 Test Version Mapping:
   v4.0 tests → NetBox v4.0 image
+<<<<<<< HEAD
   v4.1 tests → NetBox v4.1 image (netbox-docker 3.0.2)
   v4.2 tests → NetBox v4.2 image (netbox-docker 3.2.1)
   v4.3 tests → NetBox v4.3 image (netbox-docker 3.3.0)
   v4.4 tests → NetBox v4.4 image (netbox-docker 3.4.2)
   v4.5 tests → NetBox v4.5 image (netbox-docker release)
+=======
+  v4.1 tests → NetBox v4.1 image
+  v4.2 tests → NetBox v4.2 image
+  v4.3 tests → NetBox v4.3 image
+  v4.4 tests → NetBox v4.4 image
+  v4.5 tests → NetBox v4.5 image (latest)
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
 Integration Test Workflow:
   1. ./netbox-docker-helper.sh start v4.5
   2. Wait for healthy status (~2-3 minutes)
+<<<<<<< HEAD
   3. For v4.5: Token is auto-provisioned (v2 API token)
      For v4.0-v4.4: Uses predefined token from docker-compose
   4. ./netbox-docker-helper.sh populate
@@ -54,6 +63,11 @@ Integration Test Workflow:
 Note: NetBox v4.5+ uses v2 API tokens (nbt_KEY.TOKEN format)
       which are automatically provisioned via the API.
       See tests/netbox-docker/v4.5/README.md for details.
+=======
+  3. ./netbox-docker-helper.sh populate
+  4. Run your tests: ansible-test integration -v v4.5
+  5. ./netbox-docker-helper.sh stop
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 EOF
 }
 
@@ -78,6 +92,7 @@ check_docker() {
 }
 
 clone_netbox_docker() {
+<<<<<<< HEAD
     local VERSION="${1:-$DEFAULT_VERSION}"
     
     # Map NetBox versions to netbox-docker versions
@@ -126,13 +141,31 @@ clone_netbox_docker() {
     fi
     
     cd - > /dev/null
+=======
+    if [ ! -d "$NETBOX_DOCKER_DIR" ]; then
+        echo "Cloning netbox-docker (release branch)..."
+        git clone --branch release --single-branch https://github.com/netbox-community/netbox-docker.git "$NETBOX_DOCKER_DIR"
+    else
+        echo "Using existing netbox-docker at $NETBOX_DOCKER_DIR"
+        cd "$NETBOX_DOCKER_DIR"
+        echo "Pulling latest changes from release branch..."
+        git fetch origin release 2>/dev/null || true
+        git checkout release 2>/dev/null || true
+        git pull origin release 2>/dev/null || true
+        cd - > /dev/null
+    fi
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 }
 
 start_netbox() {
     local VERSION="${1:-$DEFAULT_VERSION}"
 
     check_docker
+<<<<<<< HEAD
     clone_netbox_docker "$VERSION"
+=======
+    clone_netbox_docker
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
     echo "================================"
     echo "Starting NetBox $VERSION"
@@ -142,7 +175,11 @@ start_netbox() {
     local OVERRIDE_FILE="$SCRIPT_DIR/tests/netbox-docker/$VERSION/docker-compose.override.yml"
     if [ ! -f "$OVERRIDE_FILE" ]; then
         echo "ERROR: Override file not found: $OVERRIDE_FILE"
+<<<<<<< HEAD
         echo "Available versions: v4.0, v4.1, v4.2, v4.3, v4.4, v4.5"
+=======
+        echo "Available versions: v4.0, v4.1, v4.2, v4.3"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
         exit 1
     fi
 
@@ -168,11 +205,16 @@ start_netbox() {
     echo ""
     echo "Available at: http://localhost:32768"
     echo "Admin credentials: admin / admin123456"
+<<<<<<< HEAD
+=======
+    echo "API Token: 0123456789abcdef0123456789abcdef01234567"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     echo ""
     echo "Wait for healthy status (~2-3 minutes):"
     echo "  ./netbox-docker-helper.sh logs"
     echo "  Look for: 'Listening at: http://0.0.0.0:8080'"
     echo ""
+<<<<<<< HEAD
     
     # For v4.5+, provision v2 API token
     if [ "$VERSION" = "v4.5" ]; then
@@ -210,6 +252,10 @@ start_netbox() {
         echo "Then populate test data:"
         echo "  ./netbox-docker-helper.sh populate"
     fi
+=======
+    echo "Then populate test data:"
+    echo "  ./netbox-docker-helper.sh populate"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     echo ""
 }
 
@@ -226,6 +272,7 @@ stop_netbox() {
     echo "Stopping NetBox containers..."
     $DOCKER_COMPOSE down -v
     echo "✓ NetBox stopped and volumes removed"
+<<<<<<< HEAD
     
     # Clean up token files since they won't be valid for the next instance
     if [ -f "/tmp/netbox-token.env" ]; then
@@ -236,6 +283,8 @@ stop_netbox() {
         rm -f /tmp/.netbox_test_token
         echo "✓ Cleaned up test token file"
     fi
+=======
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 }
 
 restart_netbox() {
@@ -291,6 +340,7 @@ populate_data() {
     if [ -f "venv/bin/activate" ]; then
         source venv/bin/activate
     fi
+<<<<<<< HEAD
     
     # Detect NetBox version from login page (doesn't require auth)
     NETBOX_VERSION=$(curl -s http://localhost:32768/login/ | grep -oP 'data-netbox-version="\K[^"]+' | cut -d'-' -f1 2>/dev/null || echo "unknown")
@@ -363,11 +413,16 @@ populate_data() {
     fi
 
     echo "Running netbox-deploy.py with token: ${NETBOX_TOKEN:0:20}..."
+=======
+
+    echo "Running netbox-deploy.py..."
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     python tests/integration/netbox-deploy.py
 
     echo ""
     echo "✓ Test data populated successfully"
     echo ""
+<<<<<<< HEAD
     
     # Show appropriate verification command based on token format
     if [[ "$NETBOX_TOKEN" == nbt_* ]]; then
@@ -377,6 +432,10 @@ populate_data() {
         echo "Verify data (v1 token):"
         echo "  curl -H 'Authorization: Token $NETBOX_TOKEN' http://localhost:32768/api/dcim/sites/ | jq '.count'"
     fi
+=======
+    echo "Verify data:"
+    echo "  curl -H 'Authorization: Token 0123456789abcdef0123456789abcdef01234567' http://localhost:32768/api/dcim/sites/ | jq '.count'"
+>>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     echo ""
     echo "Now run your integration tests!"
 }
