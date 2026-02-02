@@ -23,6 +23,17 @@ REPO_DIR="$(dirname "$SCRIPT_DIR")"
 VERSION="${1:-v4.3}"
 INVENTORY_DIR="$REPO_DIR/tests/integration/targets/inventory-$VERSION"
 
+# Cleanup function to remove installed collection
+cleanup() {
+    if [ -d "$REPO_DIR/ansible_collections" ]; then
+        echo "Cleaning up installed collection..."
+        rm -rf "$REPO_DIR/ansible_collections"
+    fi
+}
+
+# Ensure cleanup runs on exit (success or failure)
+trap cleanup EXIT
+
 if [ ! -d "$INVENTORY_DIR" ]; then
     echo "ERROR: Inventory test directory not found: $INVENTORY_DIR"
     echo "Available versions:"
