@@ -377,7 +377,7 @@
 #         - netbox_front_port
 #   tags:
 #     - netbox_front_port
-# 
+#
 # - name: NETBOX_FRONT_PORT_TEMPLATE TESTS
 #   ansible.builtin.include_tasks:
 #     file: netbox_front_port_template.yml
