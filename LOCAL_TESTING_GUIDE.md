@@ -24,7 +24,7 @@ The NetBox Ansible Collection uses a comprehensive testing strategy:
 - **Integration Tests**: Full end-to-end tests against live NetBox Docker instances
 - **Linting**: Code formatting (black), YAML (yamllint), and Ansible (ansible-lint)
 
-**Test Matrix**: Tests run against NetBox versions 4.0, 4.1, 4.2, 4.3 with Python 3.11, 3.12, 3.13.
+**Test Matrix**: Tests run against NetBox versions 4.0, 4.1, 4.2, 4.3, 4.4 with Python 3.11, 3.12, 3.13.
 
 ---
 
@@ -388,7 +388,7 @@ This script automatically:
 ### Manual Setup (Alternative)
 
 <details>
-**Click to expand manual Docker setup instructions**
+<summary>Click to expand manual Docker setup instructions</summary>
 
 #### Step 1: Start NetBox Docker
 
