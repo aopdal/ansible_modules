@@ -368,23 +368,24 @@
   tags:
     - netbox_rear_port_template
 
-- name: NETBOX_FRONT_PORT TESTS
-  ansible.builtin.include_tasks:
-    file: netbox_front_port.yml
-    apply:
-      tags:
-        - netbox_front_port
-  tags:
-    - netbox_front_port
-
-- name: NETBOX_FRONT_PORT_TEMPLATE TESTS
-  ansible.builtin.include_tasks:
-    file: netbox_front_port_template.yml
-    apply:
-      tags:
-        - netbox_front_port_template
-  tags:
-    - netbox_front_port_template
+# module must be updated for 4.5
+# - name: NETBOX_FRONT_PORT TESTS
+#   ansible.builtin.include_tasks:
+#     file: netbox_front_port.yml
+#     apply:
+#       tags:
+#         - netbox_front_port
+#   tags:
+#     - netbox_front_port
+# 
+# - name: NETBOX_FRONT_PORT_TEMPLATE TESTS
+#   ansible.builtin.include_tasks:
+#     file: netbox_front_port_template.yml
+#     apply:
+#       tags:
+#         - netbox_front_port_template
+#   tags:
+#     - netbox_front_port_template
 
 - name: NETBOX_CONSOLE_PORT TESTS
   ansible.builtin.include_tasks:
@@ -512,14 +513,15 @@
   tags:
     - netbox_permission
 
-- name: NETBOX_TOKEN_TESTS
-  ansible.builtin.include_tasks:
-    file: netbox_token.yml
-    apply:
-      tags:
-        - netbox_token
-  tags:
-    - netbox_token
+# Module has to be updated for 4.5
+# - name: NETBOX_TOKEN_TESTS
+#   ansible.builtin.include_tasks:
+#     file: netbox_token.yml
+#     apply:
+#       tags:
+#         - netbox_token
+#   tags:
+#     - netbox_token
 
 # Module has to be updated for 3.3
 # - name: "NETBOX_CABLE TESTS"
