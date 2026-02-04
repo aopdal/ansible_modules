@@ -86,7 +86,10 @@ clone_netbox_docker() {
         v4.3)
             DOCKER_VERSION="3.3.0"
             ;;
-        *)
+        v4.4)
+            DOCKER_VERSION="3.4.2"
+            ;;
+        v4.5)
             DOCKER_VERSION="release"
             ;;
     esac
@@ -133,7 +136,7 @@ start_netbox() {
     local OVERRIDE_FILE="$SCRIPT_DIR/tests/netbox-docker/$VERSION/docker-compose.override.yml"
     if [ ! -f "$OVERRIDE_FILE" ]; then
         echo "ERROR: Override file not found: $OVERRIDE_FILE"
-        echo "Available versions: v4.0, v4.1, v4.2, v4.3"
+        echo "Available versions: v4.0, v4.1, v4.2, v4.3, v4.4, v4.5"
         exit 1
     fi
 
