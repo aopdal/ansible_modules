@@ -169,7 +169,7 @@ ansible-lint
 
 **Test categories**:
 
-- `v4.0/`, `v4.1/`, `v4.2/`, `v4.3/` - Main module tests (91 modules)
+- `v4.0/`, `v4.1/`, `v4.2/`, `v4.3/`, `v4.4/` - Main module tests (91 modules)
 - `inventory-v4.x/` - Inventory plugin tests
 - `regression-v4.x/` - Regression tests for known bugs
 
@@ -392,7 +392,7 @@ This script automatically:
 
 #### Step 1: Start NetBox Docker
 
-Choose a NetBox version (v4.0, v4.1, v4.2, or v4.3):
+Choose a NetBox version (v4.0, v4.1, v4.2, v4.3 or v4.4):
 
 ```bash
 # Clone netbox-docker if you don't have it
