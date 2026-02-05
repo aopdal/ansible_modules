@@ -226,6 +226,16 @@ stop_netbox() {
     echo "Stopping NetBox containers..."
     $DOCKER_COMPOSE down -v
     echo "✓ NetBox stopped and volumes removed"
+    
+    # Clean up token files since they won't be valid for the next instance
+    if [ -f "/tmp/netbox-token.env" ]; then
+        rm -f /tmp/netbox-token.env
+        echo "✓ Cleaned up token file"
+    fi
+    if [ -f "/tmp/.netbox_test_token" ]; then
+        rm -f /tmp/.netbox_test_token
+        echo "✓ Cleaned up test token file"
+    fi
 }
 
 restart_netbox() {
@@ -310,6 +320,27 @@ populate_data() {
             echo "Warning: Found v1 token but NetBox $NETBOX_VERSION needs v2 token"
             unset NETBOX_TOKEN
             rm -f /tmp/netbox-token.env
+        else
+            # Validate that the token is still valid for this NetBox instance
+            if [ "$NEEDS_V2_TOKEN" = true ]; then
+                # Test v2 token with Bearer auth
+                HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+                    -H "Authorization: Bearer $NETBOX_TOKEN" \
+                    http://localhost:32768/api/dcim/sites/ 2>/dev/null)
+            else
+                # Test v1 token with Token auth
+                HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+                    -H "Authorization: Token $NETBOX_TOKEN" \
+                    http://localhost:32768/api/dcim/sites/ 2>/dev/null)
+            fi
+            
+            if [ "$HTTP_CODE" != "200" ]; then
+                echo "Warning: Existing token is no longer valid (HTTP $HTTP_CODE), will provision new token"
+                unset NETBOX_TOKEN
+                rm -f /tmp/netbox-token.env
+            else
+                echo "✓ Existing token is valid"
+            fi
         fi
     fi
     

@@ -145,6 +145,13 @@ jobs:
       - name: Run inventory tests
         continue-on-error: true
         run: |
+          # For v4.5, create runme_config to pass NETBOX_TOKEN to inventory tests
+          if [[ "${{ matrix.VERSION }}" == "v4.5" ]]; then
+            cat > tests/integration/targets/inventory-${{ matrix.VERSION }}/runme_config << EOF
+          export NETBOX_TOKEN="$NETBOX_TOKEN"
+          export NETBOX_VERSION="${{ matrix.VERSION }}"
+          EOF
+          fi
           ansible-test integration -v --color --coverage --python ${{ env.python-version }} inventory-${{ matrix.VERSION }}
         working-directory: /home/runner/.ansible/collections/ansible_collections/netbox/netbox
 
