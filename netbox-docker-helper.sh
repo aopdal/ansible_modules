@@ -282,22 +282,51 @@ populate_data() {
         source venv/bin/activate
     fi
     
-    # Check if we need to provision a v2 token
+    # Detect NetBox version from login page (doesn't require auth)
+    NETBOX_VERSION=$(curl -s http://localhost:32768/login/ | grep -oP 'data-netbox-version="\K[^"]+' | cut -d'-' -f1 2>/dev/null || echo "unknown")
+    echo "Detected NetBox version: $NETBOX_VERSION"
+    
+    # Determine if we need v2 token (4.5+) or v1 token (4.4 and earlier)
+    NEEDS_V2_TOKEN=false
+    if [[ "$NETBOX_VERSION" == 4.5* ]] || [[ "$NETBOX_VERSION" == 4.[6-9]* ]] || [[ "$NETBOX_VERSION" == [5-9].* ]]; then
+        NEEDS_V2_TOKEN=true
+    fi
+    
+    # Check if we have a token already
     if [ -z "${NETBOX_TOKEN:-}" ]; then
-        # Try to load from saved file
+        # Try to load from saved file first
         if [ -f "/tmp/netbox-token.env" ]; then
             source /tmp/netbox-token.env
         fi
     fi
     
-    # If still no token, try to provision one
+    # Check if loaded token format matches what we need
+    if [ -n "${NETBOX_TOKEN:-}" ]; then
+        if [[ "$NETBOX_TOKEN" == nbt_* ]] && [ "$NEEDS_V2_TOKEN" = false ]; then
+            echo "Warning: Found v2 token but NetBox $NETBOX_VERSION needs v1 token"
+            unset NETBOX_TOKEN
+            rm -f /tmp/netbox-token.env
+        elif [[ "$NETBOX_TOKEN" != nbt_* ]] && [ "$NEEDS_V2_TOKEN" = true ]; then
+            echo "Warning: Found v1 token but NetBox $NETBOX_VERSION needs v2 token"
+            unset NETBOX_TOKEN
+            rm -f /tmp/netbox-token.env
+        fi
+    fi
+    
+    # If still no token, provision the appropriate one
     if [ -z "${NETBOX_TOKEN:-}" ]; then
-        if [ -f "$SCRIPT_DIR/tests/netbox-docker/provision-token.sh" ]; then
-            echo "No NETBOX_TOKEN found, provisioning..."
-            NETBOX_TOKEN=$("$SCRIPT_DIR/tests/netbox-docker/provision-token.sh" 2>&1 | tail -n 1)
-            export NETBOX_TOKEN
+        if [ "$NEEDS_V2_TOKEN" = true ]; then
+            echo "NetBox 4.5+ detected, provisioning v2 API token..."
+            if [ -f "$SCRIPT_DIR/tests/netbox-docker/provision-token.sh" ]; then
+                NETBOX_TOKEN=$("$SCRIPT_DIR/tests/netbox-docker/provision-token.sh")
+                export NETBOX_TOKEN
+            else
+                echo "ERROR: provision-token.sh not found"
+                exit 1
+            fi
         else
-            # Fallback to v1 token
+            # For NetBox 4.4 and earlier, use the pre-configured v1 token
+            echo "NetBox 4.4 or earlier detected, using pre-configured v1 token"
             export NETBOX_TOKEN="0123456789abcdef0123456789abcdef01234567"
         fi
     fi
