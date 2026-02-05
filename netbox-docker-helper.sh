@@ -39,15 +39,21 @@ Test Version Mapping:
   v4.1 tests → NetBox v4.1 image (netbox-docker 3.0.2)
   v4.2 tests → NetBox v4.2 image (netbox-docker 3.2.1)
   v4.3 tests → NetBox v4.3 image (netbox-docker 3.3.0)
-  v4.4 tests → NetBox v4.4 image
-  v4.5 tests → NetBox v4.5 image (latest)
+  v4.4 tests → NetBox v4.4 image (netbox-docker 3.4.2)
+  v4.5 tests → NetBox v4.5 image (netbox-docker release)
 
 Integration Test Workflow:
   1. ./netbox-docker-helper.sh start v4.5
   2. Wait for healthy status (~2-3 minutes)
-  3. ./netbox-docker-helper.sh populate
-  4. Run your tests: ansible-test integration -v v4.5
-  5. ./netbox-docker-helper.sh stop
+  3. For v4.5: Token is auto-provisioned (v2 API token)
+     For v4.0-v4.4: Uses predefined token from docker-compose
+  4. ./netbox-docker-helper.sh populate
+  5. Run your tests: ansible-test integration -v v4.5
+  6. ./netbox-docker-helper.sh stop
+
+Note: NetBox v4.5+ uses v2 API tokens (nbt_KEY.TOKEN format)
+      which are automatically provisioned via the API.
+      See tests/netbox-docker/v4.5/README.md for details.
 EOF
 }
 
@@ -162,14 +168,48 @@ start_netbox() {
     echo ""
     echo "Available at: http://localhost:32768"
     echo "Admin credentials: admin / admin123456"
-    echo "API Token: 0123456789abcdef0123456789abcdef01234567"
     echo ""
     echo "Wait for healthy status (~2-3 minutes):"
     echo "  ./netbox-docker-helper.sh logs"
     echo "  Look for: 'Listening at: http://0.0.0.0:8080'"
     echo ""
-    echo "Then populate test data:"
-    echo "  ./netbox-docker-helper.sh populate"
+    
+    # For v4.5+, provision v2 API token
+    if [ "$VERSION" = "v4.5" ]; then
+        echo "Provisioning v2 API token for NetBox $VERSION..."
+        echo ""
+        
+        # Wait a bit for NetBox to be fully ready
+        sleep 5
+        
+        # Run the provision script
+        if [ -f "$SCRIPT_DIR/tests/netbox-docker/provision-token.sh" ]; then
+            NETBOX_TOKEN=$("$SCRIPT_DIR/tests/netbox-docker/provision-token.sh")
+            
+            if [ $? -eq 0 ]; then
+                echo "Then populate test data:"
+                echo "  ./netbox-docker-helper.sh populate"
+                echo ""
+                echo "Or run tests directly:"
+                echo "  export NETBOX_TOKEN=\"$NETBOX_TOKEN\""
+                echo "  ansible-test integration -v $VERSION"
+            else
+                echo "WARNING: Token provisioning failed. You may need to provision manually."
+                echo "Run: ./tests/netbox-docker/provision-token.sh"
+            fi
+        else
+            echo "Then provision API token:"
+            echo "  ./tests/netbox-docker/provision-token.sh"
+            echo ""
+            echo "Then populate test data:"
+            echo "  ./netbox-docker-helper.sh populate"
+        fi
+    else
+        echo "API Token: 0123456789abcdef0123456789abcdef01234567"
+        echo ""
+        echo "Then populate test data:"
+        echo "  ./netbox-docker-helper.sh populate"
+    fi
     echo ""
 }
 
@@ -241,15 +281,42 @@ populate_data() {
     if [ -f "venv/bin/activate" ]; then
         source venv/bin/activate
     fi
+    
+    # Check if we need to provision a v2 token
+    if [ -z "${NETBOX_TOKEN:-}" ]; then
+        # Try to load from saved file
+        if [ -f "/tmp/netbox-token.env" ]; then
+            source /tmp/netbox-token.env
+        fi
+    fi
+    
+    # If still no token, try to provision one
+    if [ -z "${NETBOX_TOKEN:-}" ]; then
+        if [ -f "$SCRIPT_DIR/tests/netbox-docker/provision-token.sh" ]; then
+            echo "No NETBOX_TOKEN found, provisioning..."
+            NETBOX_TOKEN=$("$SCRIPT_DIR/tests/netbox-docker/provision-token.sh" 2>&1 | tail -n 1)
+            export NETBOX_TOKEN
+        else
+            # Fallback to v1 token
+            export NETBOX_TOKEN="0123456789abcdef0123456789abcdef01234567"
+        fi
+    fi
 
-    echo "Running netbox-deploy.py..."
+    echo "Running netbox-deploy.py with token: ${NETBOX_TOKEN:0:20}..."
     python tests/integration/netbox-deploy.py
 
     echo ""
     echo "✓ Test data populated successfully"
     echo ""
-    echo "Verify data:"
-    echo "  curl -H 'Authorization: Token 0123456789abcdef0123456789abcdef01234567' http://localhost:32768/api/dcim/sites/ | jq '.count'"
+    
+    # Show appropriate verification command based on token format
+    if [[ "$NETBOX_TOKEN" == nbt_* ]]; then
+        echo "Verify data (v2 token):"
+        echo "  curl -H 'Authorization: Bearer $NETBOX_TOKEN' http://localhost:32768/api/dcim/sites/ | jq '.count'"
+    else
+        echo "Verify data (v1 token):"
+        echo "  curl -H 'Authorization: Token $NETBOX_TOKEN' http://localhost:32768/api/dcim/sites/ | jq '.count'"
+    fi
     echo ""
     echo "Now run your integration tests!"
 }

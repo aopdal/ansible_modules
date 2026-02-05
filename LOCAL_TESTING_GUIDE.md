@@ -24,7 +24,7 @@ The NetBox Ansible Collection uses a comprehensive testing strategy:
 - **Integration Tests**: Full end-to-end tests against live NetBox Docker instances
 - **Linting**: Code formatting (black), YAML (yamllint), and Ansible (ansible-lint)
 
-**Test Matrix**: Tests run against NetBox versions 4.0, 4.1, 4.2, 4.3, 4.4 with Python 3.11, 3.12, 3.13.
+**Test Matrix**: Tests run against NetBox versions 4.0, 4.1, 4.2, 4.3, 4.4, 4.5 with Python 3.11, 3.12, 3.13.
 
 ---
 
@@ -284,11 +284,11 @@ Integration tests require a running NetBox instance with test data.
 **Test Version Mapping**:
 
 - `v4.0` tests → NetBox v4.0 Docker image
-- `v4.1` tests → NetBox v4.1 Docker image
-- `v4.2` tests → NetBox v4.2 Docker image
-- `v4.3` tests → NetBox v4.3 Docker image
-- `v4.4` tests → NetBox v4.4 Docker image
-- `v4.5` tests → NetBox v4.5 Docker image (latest, pending Docker support)
+- `v4.1` tests → NetBox v4.1 Docker image (netbox-docker 3.0.2)
+- `v4.2` tests → NetBox v4.2 Docker image (netbox-docker 3.2.1)
+- `v4.3` tests → NetBox v4.3 Docker image (netbox-docker 3.3.0)
+- `v4.4` tests → NetBox v4.4 Docker image (netbox-docker 3.4.2)
+- `v4.5` tests → NetBox v4.5 Docker image (netbox-docker release branch)
 
 ### Quick Start: Using the Helper Script (Recommended)
 
@@ -325,6 +325,97 @@ A convenience script is provided to manage NetBox Docker instances:
 ./netbox-docker-helper.sh restart v4.3                            # Restart
 ./netbox-docker-helper.sh help                                    # Show help
 ```
+
+#### NetBox v4.5+ and v2 API Tokens
+
+Starting with NetBox v4.5 (using netbox-docker 4.0.0+), NetBox uses **v2 API tokens** which have a different format and authentication method:
+
+**Token Format Differences**:
+
+| Version | Format | Example | Auth Header |
+|---------|--------|---------|-------------|
+| v1 (v4.0-v4.4) | 40-char hex | `0123456789abcdef...` | `Authorization: Token <token>` |
+| v2 (v4.5+) | `nbt_KEY.TOKEN` | `nbt_XWdV7GISgXjc.9sjhCYCr...` | `Authorization: Bearer <token>` |
+
+**v2 Token Provisioning**:
+
+For v4.5+, tokens cannot be pre-configured via environment variables. They must be provisioned dynamically via the API:
+
+```bash
+# Start NetBox v4.5 - token is automatically provisioned
+./netbox-docker-helper.sh start v4.5
+
+# The helper script will:
+# 1. Start NetBox containers
+# 2. Wait for NetBox to be ready
+# 3. Automatically provision a v2 token via /api/users/tokens/provision/
+# 4. Save token to /tmp/netbox-token.env
+
+# Load the token into your environment
+source /tmp/netbox-token.env
+
+# Or manually provision a token if needed
+./tests/netbox-docker/provision-token.sh
+```
+
+**Testing API Access**:
+
+```bash
+# For v2 tokens (v4.5+)
+source /tmp/netbox-token.env
+curl -H "Authorization: Bearer $NETBOX_TOKEN" \
+     http://localhost:32768/api/dcim/sites/
+
+# For v1 tokens (v4.0-v4.4)
+curl -H "Authorization: Token 0123456789abcdef0123456789abcdef01234567" \
+     http://localhost:32768/api/dcim/sites/
+```
+
+**Integration Tests with v4.5**:
+
+The integration tests and populate script automatically detect v2 tokens:
+
+```bash
+# Standard workflow still applies
+./netbox-docker-helper.sh start v4.5
+./netbox-docker-helper.sh populate  # Uses v2 token automatically
+./hacking/integration-test.sh v4.5  # Tests use v2 token
+
+# The NETBOX_TOKEN environment variable is automatically used
+# pynetbox detects the token format and uses the correct authentication
+```
+
+**Manual Token Provisioning**:
+
+If you need to manually provision or check the token:
+
+```bash
+# Provision a new v2 token
+NETBOX_TOKEN=$(./tests/netbox-docker/provision-token.sh)
+echo "Token: $NETBOX_TOKEN"
+
+# Export for use
+export NETBOX_TOKEN="$NETBOX_TOKEN"
+
+# Or source from saved file
+source /tmp/netbox-token.env
+```
+
+**Troubleshooting v2 Tokens**:
+
+If token provisioning fails:
+
+1. Check NetBox is running: `curl http://localhost:32768/login/`
+2. Check logs: `./netbox-docker-helper.sh logs`
+3. Manually provision: `./tests/netbox-docker/provision-token.sh`
+4. Verify token: `echo $NETBOX_TOKEN` (should start with `nbt_`)
+
+**Behind the Scenes**:
+
+- The `provision-token.sh` script calls the `/api/users/tokens/provision/` endpoint with admin credentials
+- NetBox returns a `key` and `token` which are combined as `nbt_<key>.<token>`
+- The `netbox-deploy.py` script detects v2 tokens (starting with `nbt_`) and uses them automatically
+- The Ansible modules use pynetbox which automatically handles Bearer vs Token authentication
 
 ### All-in-One: Integration Test Script
 
@@ -886,7 +977,7 @@ For questions or issues, see:
 
 ---
 
-**Last Updated**: 2026-01-31
+**Last Updated**: 2026-02-05
 **Collection Version**: 3.22.0
-**Supported NetBox Versions**: 4.0, 4.1, 4.2, 4.3
+**Supported NetBox Versions**: 4.0, 4.1, 4.2, 4.3, 4.4, 4.5
 **Python Versions**: 3.11, 3.12, 3.13

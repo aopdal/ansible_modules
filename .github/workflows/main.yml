@@ -82,6 +82,8 @@ jobs:
             NETBOX_DOCKER_VERSION: 3.3.0
           - VERSION: "v4.4"
             NETBOX_DOCKER_VERSION: 3.4.2
+          - VERSION: "v4.5"
+            NETBOX_DOCKER_VERSION: release
 
     steps:
 
@@ -123,6 +125,17 @@ jobs:
           docker container ls
           docker logs netbox-docker-netbox-1
           timeout 300 bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:32768/login/)" != "200" ]]; do echo "waiting for NetBox"; sleep 5; done' || false
+        working-directory: /home/runner/.ansible/collections/ansible_collections/netbox/netbox
+
+      - name: Provision v2 API Token for v4.5+
+        if: matrix.VERSION == 'v4.5'
+        run: |
+          chmod +x ./tests/netbox-docker/provision-token.sh
+          NETBOX_TOKEN=$(./tests/netbox-docker/provision-token.sh)
+          echo "NETBOX_TOKEN=$NETBOX_TOKEN" >> $GITHUB_ENV
+          echo -n "$NETBOX_TOKEN" > /tmp/.netbox_test_token
+          chmod 600 /tmp/.netbox_test_token
+          echo "✓ Token provisioned for v4.5 and written to /tmp/.netbox_test_token"
         working-directory: /home/runner/.ansible/collections/ansible_collections/netbox/netbox
 
       - name: Pre-populate NetBox

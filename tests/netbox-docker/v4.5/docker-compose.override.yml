@@ -18,7 +18,8 @@ services:
       test: curl -f http://localhost:8080/login/ || exit 1
     environment:
       SKIP_SUPERUSER: "false"
-      SUPERUSER_API_TOKEN: "0123456789abcdef0123456789abcdef01234567"
+      # Note: SUPERUSER_API_TOKEN not used for v4.5+ with v2 tokens
+      # Token must be provisioned via API: /api/users/tokens/provision/
       SUPERUSER_EMAIL: admin@localhost.com
       SUPERUSER_NAME: admin
       SUPERUSER_PASSWORD: admin123456

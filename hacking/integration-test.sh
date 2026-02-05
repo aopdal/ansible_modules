@@ -57,6 +57,10 @@ PREREQUISITES:
   2. Test data must be populated:
      ./netbox-docker-helper.sh populate
 
+  Note: For v4.5+, a v2 API token is automatically provisioned and loaded.
+        The token is saved to /tmp/netbox-token.env and automatically
+        sourced by this script.
+
 EXAMPLES:
   # Run main module tests for v4.3
   ./hacking/integration-test.sh v4.3
@@ -110,6 +114,19 @@ setup_collection() {
 
     cd "$REPO_DIR"
 
+    # Load NetBox token if available (needed for v4.5+ v2 tokens)
+    if [ -f "/tmp/netbox-token.env" ]; then
+        echo "Loading NETBOX_TOKEN from /tmp/netbox-token.env"
+        source /tmp/netbox-token.env
+        export NETBOX_TOKEN
+        echo "✓ Token loaded: ${NETBOX_TOKEN:0:20}..."
+    elif [ -n "${NETBOX_TOKEN:-}" ]; then
+        echo "✓ Using NETBOX_TOKEN from environment: ${NETBOX_TOKEN:0:20}..."
+        export NETBOX_TOKEN
+    else
+        echo "ℹ No NETBOX_TOKEN found (using default v1 token fallback)"
+    fi
+
     # Build and install the collection
     ./hacking/build.sh
 
@@ -135,6 +152,16 @@ run_test() {
     echo "================================"
     echo "Running integration tests: $target"
     echo "================================"
+    
+    # Write NETBOX_TOKEN to a file that can be read by ansible
+    if [ -n "${NETBOX_TOKEN:-}" ]; then
+        echo "Using NETBOX_TOKEN: ${NETBOX_TOKEN:0:20}..."
+        # Write token to /tmp where it's accessible from anywhere (no newline)
+        echo -n "$NETBOX_TOKEN" > /tmp/.netbox_test_token
+        chmod 600 /tmp/.netbox_test_token
+        export NETBOX_TOKEN
+    fi
+    
     ansible-test integration -v --color yes --requirements "$target"
 }
 
@@ -161,6 +188,15 @@ run_all_tests() {
     echo "Running ALL integration tests for $version"
     echo "Targets: ${targets[*]}"
     echo "================================"
+    
+    # Ensure NETBOX_TOKEN is exported for ansible-test
+    if [ -n "${NETBOX_TOKEN:-}" ]; then
+        echo "Using NETBOX_TOKEN: ${NETBOX_TOKEN:0:20}..."
+        # Write token to /tmp where it's accessible from anywhere (no newline)
+        echo -n "$NETBOX_TOKEN" > /tmp/.netbox_test_token
+        chmod 600 /tmp/.netbox_test_token
+        export NETBOX_TOKEN
+    fi
 
     for target in "${targets[@]}"; do
         echo ""

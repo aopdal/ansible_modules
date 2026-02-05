@@ -17,8 +17,19 @@ from packaging import version
 # Set nb variable to connect to NetBox and use the veriable in future calls
 nb_host = os.getenv("NETBOX_HOST", "http://localhost:32768")
 nb_token = os.getenv("NETBOX_TOKEN", "0123456789abcdef0123456789abcdef01234567")
-nb = pynetbox.api(nb_host, nb_token)
+
+# Check if this is a v2 token (nbt_ prefix) and configure accordingly
+if nb_token.startswith("nbt_"):
+    # v2 token requires Bearer authentication
+    print(f"Using NetBox v2 API token (Bearer auth)")
+    nb = pynetbox.api(nb_host, token=nb_token)
+else:
+    # v1 token uses Token authentication (default)
+    print(f"Using NetBox v1 API token (Token auth)")
+    nb = pynetbox.api(nb_host, token=nb_token)
+
 nb_version = version.parse(nb.version)
+print(f"NetBox version: {nb_version}")
 
 ERRORS = False
 
