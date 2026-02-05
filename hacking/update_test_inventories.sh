@@ -63,6 +63,20 @@ export OUTPUT_DIR="$INVENTORY_DIR/files"
 # Set the NetBox version for comparison script
 export NETBOX_VERSION="$VERSION"
 
+# Load NetBox token if available (needed for v4.5+ v2 tokens)
+if [ -f "/tmp/netbox-token.env" ]; then
+    echo "Loading NETBOX_TOKEN from /tmp/netbox-token.env"
+    source /tmp/netbox-token.env
+    export NETBOX_TOKEN
+    echo "✓ Token loaded: ${NETBOX_TOKEN:0:20}..."
+elif [ -n "${NETBOX_TOKEN:-}" ]; then
+    echo "✓ Using NETBOX_TOKEN from environment: ${NETBOX_TOKEN:0:20}..."
+    export NETBOX_TOKEN
+else
+    echo "⚠ No NETBOX_TOKEN found - using default v1 token fallback"
+    export NETBOX_TOKEN="0123456789abcdef0123456789abcdef01234567"
+fi
+
 # Remove local cache to ensure fresh data
 rm -rf /tmp/inventory_netbox/
 

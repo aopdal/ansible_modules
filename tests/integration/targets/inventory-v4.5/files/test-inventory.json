@@ -124,6 +124,7 @@
                                 "id": 3,
                                 "nat_inside": null,
                                 "nat_outside": [],
+                                "owner": null,
                                 "role": null,
                                 "status": {
                                     "label": {
@@ -155,6 +156,7 @@
                         "name": {
                             "__ansible_unsafe": "Ethernet1/1"
                         },
+                        "owner": null,
                         "parent": null,
                         "poe_mode": null,
                         "poe_type": null,
@@ -250,6 +252,7 @@
                                 "id": 4,
                                 "nat_inside": null,
                                 "nat_outside": [],
+                                "owner": null,
                                 "role": null,
                                 "status": {
                                     "label": {
@@ -281,6 +284,7 @@
                         "name": {
                             "__ansible_unsafe": "Ethernet2/1"
                         },
+                        "owner": null,
                         "parent": null,
                         "poe_mode": null,
                         "poe_type": null,
@@ -364,6 +368,7 @@
                         "name": {
                             "__ansible_unsafe": "wlink1"
                         },
+                        "owner": null,
                         "parent": null,
                         "poe_mode": null,
                         "poe_type": null,
@@ -474,6 +479,7 @@
                         "name": {
                             "__ansible_unsafe": "Eth0"
                         },
+                        "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
                         "qinq_svlan": null,
@@ -520,6 +526,7 @@
                         "name": {
                             "__ansible_unsafe": "Eth1"
                         },
+                        "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
                         "qinq_svlan": null,
@@ -695,6 +702,7 @@
                                 "id": 1,
                                 "nat_inside": null,
                                 "nat_outside": [],
+                                "owner": null,
                                 "role": null,
                                 "status": {
                                     "label": {
@@ -739,6 +747,7 @@
                         "name": {
                             "__ansible_unsafe": "GigabitEthernet1"
                         },
+                        "owner": null,
                         "parent": null,
                         "poe_mode": null,
                         "poe_type": null,
@@ -834,6 +843,7 @@
                                 "id": 2,
                                 "nat_inside": null,
                                 "nat_outside": [],
+                                "owner": null,
                                 "role": null,
                                 "status": {
                                     "label": {
@@ -890,6 +900,7 @@
                         "name": {
                             "__ansible_unsafe": "GigabitEthernet2"
                         },
+                        "owner": null,
                         "parent": null,
                         "poe_mode": null,
                         "poe_type": null,
@@ -973,6 +984,7 @@
                         "name": {
                             "__ansible_unsafe": "wlink1"
                         },
+                        "owner": null,
                         "parent": null,
                         "poe_mode": null,
                         "poe_type": null,
@@ -1066,6 +1078,7 @@
                         "name": {
                             "__ansible_unsafe": "disk1"
                         },
+                        "owner": null,
                         "size": 60,
                         "tags": [],
                         "virtual_machine": {
@@ -1096,6 +1109,7 @@
                         "name": {
                             "__ansible_unsafe": "disk2"
                         },
+                        "owner": null,
                         "size": 110,
                         "tags": [],
                         "virtual_machine": {
@@ -1165,6 +1179,7 @@
                         "name": {
                             "__ansible_unsafe": "Eth0"
                         },
+                        "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
                         "qinq_svlan": null,
@@ -1236,6 +1251,7 @@
                         "name": {
                             "__ansible_unsafe": "Eth1"
                         },
+                        "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
                         "qinq_svlan": null,
@@ -1282,6 +1298,7 @@
                         "name": {
                             "__ansible_unsafe": "Eth2"
                         },
+                        "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
                         "qinq_svlan": null,
@@ -1328,6 +1345,7 @@
                         "name": {
                             "__ansible_unsafe": "Eth3"
                         },
+                        "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
                         "qinq_svlan": null,
@@ -1374,6 +1392,7 @@
                         "name": {
                             "__ansible_unsafe": "Eth4"
                         },
+                        "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
                         "qinq_svlan": null,
@@ -1429,6 +1448,7 @@
                         "name": {
                             "__ansible_unsafe": "disk1"
                         },
+                        "owner": null,
                         "size": 60,
                         "tags": [],
                         "virtual_machine": {
@@ -1459,6 +1479,7 @@
                         "name": {
                             "__ansible_unsafe": "disk2"
                         },
+                        "owner": null,
                         "size": 110,
                         "tags": [],
                         "virtual_machine": {
@@ -1514,6 +1535,7 @@
                         "name": {
                             "__ansible_unsafe": "Eth0"
                         },
+                        "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
                         "qinq_svlan": null,
@@ -1560,6 +1582,7 @@
                         "name": {
                             "__ansible_unsafe": "Eth1"
                         },
+                        "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
                         "qinq_svlan": null,
@@ -1606,6 +1629,7 @@
                         "name": {
                             "__ansible_unsafe": "Eth2"
                         },
+                        "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
                         "qinq_svlan": null,
@@ -1652,6 +1676,7 @@
                         "name": {
                             "__ansible_unsafe": "Eth3"
                         },
+                        "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
                         "qinq_svlan": null,
@@ -1698,6 +1723,7 @@
                         "name": {
                             "__ansible_unsafe": "Eth4"
                         },
+                        "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
                         "qinq_svlan": null,
