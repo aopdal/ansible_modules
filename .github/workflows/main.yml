@@ -149,12 +149,12 @@ jobs:
           cat > tests/integration/targets/inventory-${{ matrix.VERSION }}/runme_config << EOF
           export NETBOX_VERSION="${{ matrix.VERSION }}"
           EOF
-          
+
           # For v4.5, also add NETBOX_TOKEN to runme_config
           if [[ "${{ matrix.VERSION }}" == "v4.5" ]]; then
             echo "export NETBOX_TOKEN=\"$NETBOX_TOKEN\"" >> tests/integration/targets/inventory-${{ matrix.VERSION }}/runme_config
           fi
-          
+
           ansible-test integration -v --color --coverage --python ${{ env.python-version }} inventory-${{ matrix.VERSION }}
         working-directory: /home/runner/.ansible/collections/ansible_collections/netbox/netbox
 
