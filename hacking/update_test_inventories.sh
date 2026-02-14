@@ -23,7 +23,6 @@ REPO_DIR="$(dirname "$SCRIPT_DIR")"
 VERSION="${1:-v4.3}"
 INVENTORY_DIR="$REPO_DIR/tests/integration/targets/inventory-$VERSION"
 
-<<<<<<< HEAD
 # Cleanup function to remove installed collection
 cleanup() {
     if [ -d "$REPO_DIR/ansible_collections" ]; then
@@ -42,15 +41,6 @@ if [ ! -d "$INVENTORY_DIR" ]; then
     exit 1
 fi
 
-=======
-if [ ! -d "$INVENTORY_DIR" ]; then
-    echo "ERROR: Inventory test directory not found: $INVENTORY_DIR"
-    echo "Available versions:"
-    ls -d "$REPO_DIR/tests/integration/targets/inventory-v"* 2>/dev/null | xargs -n1 basename | sed 's/inventory-/  /'
-    exit 1
-fi
-
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 echo "================================"
 echo "Updating inventory test data for $VERSION"
 echo "================================"
@@ -73,7 +63,6 @@ export OUTPUT_DIR="$INVENTORY_DIR/files"
 # Set the NetBox version for comparison script
 export NETBOX_VERSION="$VERSION"
 
-<<<<<<< HEAD
 # Load NetBox token if available (needed for v4.5+ v2 tokens)
 if [ -f "/tmp/netbox-token.env" ]; then
     echo "Loading NETBOX_TOKEN from /tmp/netbox-token.env"
@@ -88,8 +77,6 @@ else
     export NETBOX_TOKEN="0123456789abcdef0123456789abcdef01234567"
 fi
 
-=======
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 # Remove local cache to ensure fresh data
 rm -rf /tmp/inventory_netbox/
 

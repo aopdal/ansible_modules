@@ -7,11 +7,7 @@
 - name: 1 - Test wireless LAN creation
   netbox.netbox.netbox_wireless_lan:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       ssid: Wireless LAN One
   register: test_one
@@ -28,11 +24,7 @@
 - name: Test duplicate wireless LAN
   netbox.netbox.netbox_wireless_lan:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       ssid: Wireless LAN One
   register: test_two
@@ -47,11 +39,7 @@
 - name: 3 - Test update
   netbox.netbox.netbox_wireless_lan:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       ssid: Wireless LAN One
       description: New Description
@@ -69,11 +57,7 @@
 - name: 4 - Test delete
   netbox.netbox.netbox_wireless_lan:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       ssid: Wireless LAN One
     state: absent
@@ -90,11 +74,7 @@
 - name: 5 - Create wireless LAN with all parameters
   netbox.netbox.netbox_wireless_lan:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       ssid: Wireless Network One
       description: Cool Wireless Network

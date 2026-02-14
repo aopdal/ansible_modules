@@ -24,11 +24,7 @@ The NetBox Ansible Collection uses a comprehensive testing strategy:
 - **Integration Tests**: Full end-to-end tests against live NetBox Docker instances
 - **Linting**: Code formatting (black), YAML (yamllint), and Ansible (ansible-lint)
 
-<<<<<<< HEAD
 **Test Matrix**: Tests run against NetBox versions 4.0, 4.1, 4.2, 4.3, 4.4, 4.5 with Python 3.11, 3.12, 3.13.
-=======
-**Test Matrix**: Tests run against NetBox versions 4.0, 4.1, 4.2, 4.3 with Python 3.11, 3.12, 3.13.
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
 ---
 
@@ -54,18 +50,11 @@ ansible --version
 
 ### Python Environment Setup
 
-<<<<<<< HEAD
 #### Option 1: Using Poetry (Recommended)
 
 ```bash
 # Navigate to the cloned repository
 cd /path/to/ansible_modules
-=======
-**Option 1: Using Poetry (Recommended)**
-
-```bash
-cd /home/arne/code/ansible_modules
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
 # Install dependencies
 poetry install
@@ -74,11 +63,7 @@ poetry install
 poetry shell
 ```
 
-<<<<<<< HEAD
 #### Option 2: Using virtualenv
-=======
-**Option 2: Using virtualenv**
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
 ```bash
 # Create virtualenv
@@ -95,11 +80,7 @@ pip install pytest pytest-mock pytest-xdist pytest-forked coverage deepdiff
 
 Ansible collections **must** be in a specific directory structure:
 
-<<<<<<< HEAD
 ```text
-=======
-```
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 ansible_collections/
 └── netbox/
     └── netbox/
@@ -188,11 +169,7 @@ ansible-lint
 
 **Test categories**:
 
-<<<<<<< HEAD
 - `v4.0/`, `v4.1/`, `v4.2/`, `v4.3/`, `v4.4/` - Main module tests (91 modules)
-=======
-- `v4.0/`, `v4.1/`, `v4.2/`, `v4.3/` - Main module tests (91 modules)
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 - `inventory-v4.x/` - Inventory plugin tests
 - `regression-v4.x/` - Regression tests for known bugs
 
@@ -307,19 +284,11 @@ Integration tests require a running NetBox instance with test data.
 **Test Version Mapping**:
 
 - `v4.0` tests → NetBox v4.0 Docker image
-<<<<<<< HEAD
 - `v4.1` tests → NetBox v4.1 Docker image (netbox-docker 3.0.2)
 - `v4.2` tests → NetBox v4.2 Docker image (netbox-docker 3.2.1)
 - `v4.3` tests → NetBox v4.3 Docker image (netbox-docker 3.3.0)
 - `v4.4` tests → NetBox v4.4 Docker image (netbox-docker 3.4.2)
 - `v4.5` tests → NetBox v4.5 Docker image (netbox-docker release branch)
-=======
-- `v4.1` tests → NetBox v4.1 Docker image
-- `v4.2` tests → NetBox v4.2 Docker image
-- `v4.3` tests → NetBox v4.3 Docker image
-- `v4.4` tests → NetBox v4.4 Docker image
-- `v4.5` tests → NetBox v4.5 Docker image (latest, pending Docker support)
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
 ### Quick Start: Using the Helper Script (Recommended)
 
@@ -357,7 +326,6 @@ A convenience script is provided to manage NetBox Docker instances:
 ./netbox-docker-helper.sh help                                    # Show help
 ```
 
-<<<<<<< HEAD
 #### NetBox v4.5+ and v2 API Tokens
 
 Starting with NetBox v4.5 (using netbox-docker 4.0.0+), NetBox uses **v2 API tokens** which have a different format and authentication method:
@@ -449,8 +417,6 @@ If token provisioning fails:
 - The `netbox-deploy.py` script detects v2 tokens (starting with `nbt_`) and uses them automatically
 - The Ansible modules use pynetbox which automatically handles Bearer vs Token authentication
 
-=======
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 ### All-in-One: Integration Test Script
 
 For a complete test workflow (build, install dependencies, and run tests), use the integration test script:
@@ -515,15 +481,9 @@ This script automatically:
 <details>
 <summary>Click to expand manual Docker setup instructions</summary>
 
-<<<<<<< HEAD
 #### Step 1: Start NetBox Docker
 
 Choose a NetBox version (v4.0, v4.1, v4.2, v4.3 or v4.4):
-=======
-**Step 1: Start NetBox Docker**
-
-Choose a NetBox version (v4.0, v4.1, v4.2, or v4.3):
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
 ```bash
 # Clone netbox-docker if you don't have it
@@ -535,11 +495,7 @@ cd netbox-docker
 export VERSION=v4.3
 
 # Copy the test override config
-<<<<<<< HEAD
 cp /path/to/ansible_modules/tests/netbox-docker/v4.3/docker-compose.override.yml .
-=======
-cp /home/arne/code/ansible_modules/tests/netbox-docker/v4.3/docker-compose.override.yml .
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
 # Start NetBox (runs in background with -d flag)
 docker-compose pull
@@ -557,18 +513,11 @@ curl http://localhost:32768/api/
 # Should return API version info
 ```
 
-<<<<<<< HEAD
 #### Step 2: Pre-populate Test Data**
 
 ```bash
 # Navigate to the repository root
 cd /path/to/ansible_modules
-=======
-**Step 2: Pre-populate Test Data**
-
-```bash
-cd /home/arne/code/ansible_modules
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
 # Run the deployment script to create test objects
 python tests/integration/netbox-deploy.py
@@ -581,11 +530,7 @@ curl -H "Authorization: Token 0123456789abcdef0123456789abcdef01234567" \
 
 **Note**: The script expects NetBox at `http://localhost:32768` with token `0123456789abcdef0123456789abcdef01234567`
 
-<<<<<<< HEAD
 #### Step 3: Run Integration Tests**
-=======
-**Step 3: Run Integration Tests**
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
 ```bash
 # Activate venv and detect Python version
@@ -600,41 +545,25 @@ ansible-test integration -v --python "${PYTHON_VERSION}" inventory-v4.3
 ansible-test integration -v --python "${PYTHON_VERSION}" regression-v4.3
 ```
 
-<<<<<<< HEAD
 #### Step 4: Inventory Tests (Special Case)
 
 Inventory tests compare `ansible-inventory --list` output against expected JSON.
 
 Manual inventory test run:
-=======
-**Step 4: Inventory Tests (Special Case)
-
-Inventory tests compare `ansible-inventory --list` output against expected JSON.
-
-**Manual inventory test run**:
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
 ```bash
 cd tests/integration/targets/inventory-v4.3/
 ./runme.sh
 ```
 
-<<<<<<< HEAD
 Update test data (after inventory plugin changes):
-=======
-**Update test data** (after inventory plugin changes):
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
 ```bash
 # From repo root
 ./hacking/update_test_inventories.sh
 ```
 
-<<<<<<< HEAD
 #### Step 5: Cleanup
-=======
-**Step 5: Cleanup**
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 
 ```bash
 # Stop NetBox Docker
@@ -1048,13 +977,7 @@ For questions or issues, see:
 
 ---
 
-<<<<<<< HEAD
 **Last Updated**: 2026-02-05
 **Collection Version**: 3.22.0
 **Supported NetBox Versions**: 4.0, 4.1, 4.2, 4.3, 4.4, 4.5
-=======
-**Last Updated**: 2026-01-31
-**Collection Version**: 3.22.0
-**Supported NetBox Versions**: 4.0, 4.1, 4.2, 4.3
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
 **Python Versions**: 3.11, 3.12, 3.13

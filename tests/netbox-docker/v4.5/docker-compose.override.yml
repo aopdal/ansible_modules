@@ -17,13 +17,9 @@ services:
       interval: 15s
       test: curl -f http://localhost:8080/login/ || exit 1
     environment:
-<<<<<<< HEAD
       SKIP_SUPERUSER: "false"
       # Note: SUPERUSER_API_TOKEN not used for v4.5+ with v2 tokens
       # Token must be provisioned via API: /api/users/tokens/provision/
       SUPERUSER_EMAIL: admin@localhost.com
       SUPERUSER_NAME: admin
       SUPERUSER_PASSWORD: admin123456
-=======
-      SKIP_SUPERUSER: "true"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)

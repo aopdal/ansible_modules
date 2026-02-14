@@ -7,11 +7,7 @@
 - name: "ASN 1: Test ASN creation"
   netbox.netbox.netbox_asn:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       asn: 1111111111
       rir: Example RIR
@@ -31,11 +27,7 @@
 - name: "ASN 2: Create duplicate"
   netbox.netbox.netbox_asn:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       asn: 1111111111
       rir: Example RIR
@@ -53,11 +45,7 @@
 - name: "ASN 3: Update ASN with other fields"
   netbox.netbox.netbox_asn:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       asn: 1111111111
       rir: Example RIR
@@ -85,11 +73,7 @@
 - name: "ASN 4: ASSERT - Delete"
   netbox.netbox.netbox_asn:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       asn: 1111111111
     state: absent

@@ -4,11 +4,7 @@
 - name: 1 - Interface with required information
   netbox.netbox.netbox_device_interface:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: test100
       name: GigabitEthernet3
@@ -28,11 +24,7 @@
 - name: 2 - Update test100 - GigabitEthernet3
   netbox.netbox.netbox_device_interface:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: test100
       name: GigabitEthernet3
@@ -55,11 +47,7 @@
 - name: 3 - Delete interface test100 - GigabitEthernet3
   netbox.netbox.netbox_device_interface:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: test100
       name: GigabitEthernet3
@@ -77,11 +65,7 @@
 - name: 4 - Create LAG with several specified options
   netbox.netbox.netbox_device_interface:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: test100
       name: port-channel1
@@ -110,11 +94,7 @@
 - name: 5 - Create interface and assign it to parent LAG
   netbox.netbox.netbox_device_interface:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: test100
       name: GigabitEthernet3
@@ -147,11 +127,7 @@
 - name: 6 - Create interface as trunk port
   netbox.netbox.netbox_device_interface:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: test100
       name: GigabitEthernet21
@@ -191,11 +167,7 @@
 - name: 7 - Duplicate Interface
   netbox.netbox.netbox_device_interface:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: test100
       name: GigabitEthernet1
@@ -212,11 +184,7 @@
 - name: Add port-channel1 to R1 to test finding proper port-channel1
   netbox.netbox.netbox_device_interface:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: R1-Device
       name: port-channel1
@@ -225,11 +193,7 @@
 - name: 8 - Create interface and assign it to parent LAG - non dict
   netbox.netbox.netbox_device_interface:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: test100
       name: GigabitEthernet4
@@ -261,11 +225,7 @@
 - name: 9 - Create interface on VC child
   netbox.netbox.netbox_device_interface:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: Test Nexus Child One
       name: Ethernet2/2
@@ -288,11 +248,7 @@
 - name: 10 - Update interface on VC child
   netbox.netbox.netbox_device_interface:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: Test Nexus One
       name: Ethernet2/2
@@ -317,11 +273,7 @@
 - name: 11 - Update interface on VC child w/o update_vc_child
   netbox.netbox.netbox_device_interface:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: Test Nexus One
       name: Ethernet2/2
@@ -340,11 +292,7 @@
 - name: 12 - Create interface and mark it as connected
   netbox.netbox.netbox_device_interface:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: test100
       name: GigabitEthernet5
@@ -366,11 +314,7 @@
 - name: "13 - Update interface primary MAC address"
   netbox.netbox.netbox_device_interface:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       device: test100
       name: GigabitEthernet2

@@ -7,11 +7,7 @@
 - name: "1 - Create IP address within NetBox with only required information - State: Present"
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       address: 192.168.1.10/30
     state: present
@@ -29,11 +25,7 @@
 - name: 2 - Update 192.168.1.10/30
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       address: 192.168.1.10/30
       description: Updated ip address
@@ -56,11 +48,7 @@
 - name: "3 - Delete IP - 192.168.1.10 - State: Absent"
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       address: 192.168.1.10/30
     state: absent
@@ -77,11 +65,7 @@
 - name: "4 - Create IP in global VRF - 192.168.1.20/30 - State: Present"
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       address: 192.168.1.20/30
     state: present
@@ -118,11 +102,7 @@
 - name: "6 - Create new address with only prefix specified - State: new"
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       prefix: 192.168.100.0/24
     state: new
@@ -140,11 +120,7 @@
 - name: 7 - Create IP address with several specified
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       family: 4
       address: 172.16.1.20/24
@@ -177,11 +153,7 @@
 - name: 8 - Create IP address and assign a nat_inside IP
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       family: 4
       address: 10.10.1.30/16
@@ -206,11 +178,7 @@
 - name: "9 - Create IP address on GigabitEthernet2 - test100 - State: present"
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       family: 4
       address: 10.10.200.30/16
@@ -234,11 +202,7 @@
 - name: "10 - Create IP address on GigabitEthernet2 - test100 - State: new"
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       family: 4
       prefix: 10.10.0.0/16
@@ -263,11 +227,7 @@
 - name: "11 - Create IP address on GigabitEthernet2 - test100 - State: present"
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       family: 4
       prefix: 192.168.100.0/24
@@ -289,11 +249,7 @@
 - name: 12 - Duplicate - 192.168.100.2/24 on interface
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       address: 192.168.100.2/24
       assigned_object:
@@ -314,11 +270,7 @@
 - name: 13 - Duplicate - 192.168.100.2/24
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       address: 192.168.100.2/24
     state: present
@@ -334,11 +286,7 @@
 - name: "14 - Create IP address on Eth0 - test100-vm - State: present"
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       family: 4
       address: 10.188.1.100/24
@@ -388,11 +336,7 @@
 - name: "16 - Create IP address with no mask - State: Present"
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       address: 10.120.10.1
     state: present
@@ -410,11 +354,7 @@
 - name: "17 - Create IP address on GigabitEthernet2 - test100 with interface value - State: present"
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       family: 4
       address: 10.10.200.31/16
@@ -438,11 +378,7 @@
 - name: "18 - Create IP address on GigabitEthernet2 - test100 with interface value - State: new"
   netbox.netbox.netbox_ip_address:
     netbox_url: http://localhost:32768
-<<<<<<< HEAD
     netbox_token: "{{ lookup('file', '/tmp/.netbox_test_token', errors='ignore') | default(lookup('env', 'NETBOX_TOKEN', default='0123456789abcdef0123456789abcdef01234567')) }}"
-=======
-    netbox_token: "0123456789abcdef0123456789abcdef01234567"
->>>>>>> 68d4b64 (Add local testing infrastructure for inventory and regression tests)
     data:
       family: 4
       prefix: 10.10.0.0/16
