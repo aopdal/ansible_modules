@@ -34,7 +34,9 @@ then
     COMPARE_OPTIONS+=(--write)
 fi
 
-echo OUTPUT_DIR="$OUTPUT_DIR"
+# OUTPUT_DIR is set by ansible-test, or use a temp directory for manual runs
+: "${OUTPUT_DIR:=$(mktemp -d)}"
+echo OUTPUT_DIR="${OUTPUT_DIR}"
 
 inventory () {
     if [[ -n "${OUTPUT_INVENTORY_JSON:-}" ]]

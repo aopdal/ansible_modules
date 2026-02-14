@@ -194,57 +194,6 @@
                 },
                 "tags": []
             },
-            "issue-242": {
-                "asset_tag": {
-                    "__ansible_unsafe": "Null"
-                },
-                "custom_fields": {},
-                "device_type": {
-                    "__ansible_unsafe": "cisco-test"
-                },
-                "is_virtual": false,
-                "locations": [],
-                "manufacturer": {
-                    "__ansible_unsafe": "cisco"
-                },
-                "regions": [
-                    {
-                        "__ansible_unsafe": "test-region"
-                    },
-                    {
-                        "__ansible_unsafe": "parent-region"
-                    }
-                ],
-                "role": {
-                    "__ansible_unsafe": "core-switch"
-                },
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
-                "site": {
-                    "__ansible_unsafe": "test-site"
-                },
-                "site_groups": [],
-                "status": {
-                    "label": {
-                        "__ansible_unsafe": "Staged"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "staged"
-                    }
-                },
-                "tags": [
-                    {
-                        "__ansible_unsafe": "first"
-                    },
-                    {
-                        "__ansible_unsafe": "second"
-                    },
-                    {
-                        "__ansible_unsafe": "third"
-                    }
-                ]
-            },
             "test100": {
                 "asset_tag": {
                     "__ansible_unsafe": "123456789"
@@ -463,15 +412,11 @@
             "parent_region",
             "other_site_group",
             "parent_site_group",
-            "first",
-            "second",
-            "third",
+            "Test_Rack_Site_2",
+            "test_rack_role",
             "core_switch",
             "cisco_test",
             "cisco",
-            "staged",
-            "Test_Rack_Site_2",
-            "test_rack_role",
             "active",
             "nexus_parent",
             "jinja_test_group",
@@ -485,7 +430,6 @@
     },
     "cisco": {
         "hosts": [
-            "issue-242",
             "R1-Device",
             "VC1",
             "test100",
@@ -494,7 +438,6 @@
     },
     "cisco_test": {
         "hosts": [
-            "issue-242",
             "R1-Device",
             "test100",
             "TestDeviceR1"
@@ -502,16 +445,10 @@
     },
     "core_switch": {
         "hosts": [
-            "issue-242",
             "R1-Device",
             "VC1",
             "test100",
             "TestDeviceR1"
-        ]
-    },
-    "first": {
-        "hosts": [
-            "issue-242"
         ]
     },
     "is_virtual": {
@@ -548,16 +485,6 @@
     "parent_site_group": {
         "children": [
             "test_site_group"
-        ]
-    },
-    "second": {
-        "hosts": [
-            "issue-242"
-        ]
-    },
-    "staged": {
-        "hosts": [
-            "issue-242"
         ]
     },
     "test_cluster_group": {
@@ -597,24 +524,12 @@
     },
     "test_site": {
         "children": [
-            "office_building",
             "parent_rack_group"
-        ],
-        "hosts": [
-            "issue-242"
         ]
     },
     "test_site2": {
-        "children": [
-            "office_building"
-        ],
         "hosts": [
             "R1-Device"
-        ]
-    },
-    "third": {
-        "hosts": [
-            "issue-242"
         ]
     }
 }
