@@ -1,20 +1,13 @@
 {
     "_meta": {
         "hostvars": {
-            "R1-Device": {
-                "asset_tag": {
-                    "__ansible_unsafe": "345678901"
-                },
+            "Device Power Tests": {
                 "custom_fields": {},
                 "device_roles": [
-                    {
-                        "__ansible_unsafe": "core-switch"
-                    }
+                    "core-switch"
                 ],
                 "device_types": [
-                    {
-                        "__ansible_unsafe": "cisco-test"
-                    }
+                    "cisco-test"
                 ],
                 "is_virtual": false,
                 "local_context_data": [
@@ -22,109 +15,329 @@
                 ],
                 "locations": [],
                 "manufacturers": [
-                    {
-                        "__ansible_unsafe": "cisco"
-                    }
+                    "cisco"
                 ],
-                "rack_role": {
-                    "__ansible_unsafe": "test-rack-role"
-                },
-                "racks": [
-                    {
-                        "__ansible_unsafe": "Test Rack Site 2"
-                    }
+                "regions": [
+                    "test-region",
+                    "parent-region"
                 ],
-                "regions": [],
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
+                "serial": "",
                 "services": [],
                 "site_groups": [],
                 "sites": [
-                    {
-                        "__ansible_unsafe": "test-site2"
-                    }
+                    "test-site"
                 ],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": []
+            },
+            "Device Virtual Chassis Tests": {
+                "custom_fields": {},
+                "device_roles": [
+                    "core-switch"
+                ],
+                "device_types": [
+                    "cisco-test"
+                ],
+                "is_virtual": false,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "manufacturers": [
+                    "cisco"
+                ],
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [],
+                "sites": [
+                    "test-site"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": []
+            },
+            "Device Virtual Chassis Tests 2": {
+                "custom_fields": {},
+                "device_roles": [
+                    "core-switch"
+                ],
+                "device_types": [
+                    "cisco-test"
+                ],
+                "is_virtual": false,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "manufacturers": [
+                    "cisco"
+                ],
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [],
+                "sites": [
+                    "test-site"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": []
+            },
+            "Device With Contact": {
+                "custom_fields": {},
+                "device_roles": [
+                    "core-switch"
+                ],
+                "device_types": [
+                    "cisco-test"
+                ],
+                "is_virtual": false,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "manufacturers": [
+                    "cisco"
+                ],
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [],
+                "sites": [
+                    "test-site"
+                ],
+                "status": {
+                    "label": "Staged",
+                    "value": "staged"
+                },
+                "tags": []
+            },
+            "FOR_SERVICE": {
+                "custom_fields": {},
+                "device_roles": [
+                    "core-switch"
+                ],
+                "device_types": [
+                    "cisco-test"
+                ],
+                "is_virtual": false,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "manufacturers": [
+                    "cisco"
+                ],
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "serial": "",
+                "services": [
+                    {
+                        "comments": "",
+                        "custom_fields": {},
+                        "description": "",
+                        "display": "node-exporter (TCP/9100, 9200)",
+                        "display_url": "http://localhost:32768/ipam/services/1/",
+                        "id": 1,
+                        "ipaddresses": [],
+                        "name": "node-exporter",
+                        "owner": null,
+                        "parent": {
+                            "description": "",
+                            "display": "FOR_SERVICE",
+                            "id": 14,
+                            "name": "FOR_SERVICE"
+                        },
+                        "parent_object_id": 14,
+                        "parent_object_type": "dcim.device",
+                        "ports": [
+                            9100,
+                            9200
+                        ],
+                        "protocol": {
+                            "label": "TCP",
+                            "value": "tcp"
+                        },
+                        "tags": [
+                            {
+                                "color": "9e9e9e",
+                                "display": "Schnozzberry",
+                                "display_url": "http://localhost:32768/extras/tags/4/",
+                                "id": 4,
+                                "name": "Schnozzberry",
+                                "slug": "schnozzberry"
+                            }
+                        ]
                     }
+                ],
+                "site_groups": [],
+                "sites": [
+                    "test-site"
+                ],
+                "status": {
+                    "label": "Staged",
+                    "value": "staged"
+                },
+                "tags": []
+            },
+            "L1": {
+                "custom_fields": {},
+                "device_roles": [
+                    "core-switch"
+                ],
+                "device_types": [
+                    "cisco-test"
+                ],
+                "is_virtual": false,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "manufacturers": [
+                    "cisco"
+                ],
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [],
+                "sites": [
+                    "test-site"
+                ],
+                "status": {
+                    "label": "Staged",
+                    "value": "staged"
+                },
+                "tags": [
+                    "nolookup"
+                ]
+            },
+            "L2": {
+                "custom_fields": {},
+                "device_roles": [
+                    "core-switch"
+                ],
+                "device_types": [
+                    "cisco-test"
+                ],
+                "is_virtual": false,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "manufacturers": [
+                    "cisco"
+                ],
+                "regions": [],
+                "serial": "",
+                "services": [],
+                "site_groups": [],
+                "sites": [
+                    "test-site2"
+                ],
+                "status": {
+                    "label": "Staged",
+                    "value": "staged"
+                },
+                "tags": [
+                    "lookup"
+                ]
+            },
+            "R1-Device": {
+                "asset_tag": "345678901",
+                "custom_fields": {},
+                "device_roles": [
+                    "core-switch"
+                ],
+                "device_types": [
+                    "cisco-test"
+                ],
+                "is_virtual": false,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "manufacturers": [
+                    "cisco"
+                ],
+                "rack_role": "test-rack-role",
+                "racks": [
+                    "Test Rack Site 2"
+                ],
+                "regions": [],
+                "serial": "",
+                "services": [],
+                "site_groups": [],
+                "sites": [
+                    "test-site2"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "Test Nexus One": {
-                "ansible_host": {
-                    "__ansible_unsafe": "172.16.180.12"
-                },
+                "ansible_host": "172.16.180.12",
                 "custom_fields": {},
                 "device_roles": [
-                    {
-                        "__ansible_unsafe": "core-switch"
-                    }
+                    "core-switch"
                 ],
                 "device_types": [
-                    {
-                        "__ansible_unsafe": "nexus-parent"
-                    }
+                    "nexus-parent"
                 ],
                 "is_virtual": false,
                 "local_context_data": [
                     null
                 ],
                 "locations": [
-                    {
-                        "__ansible_unsafe": "test-rack-group"
-                    },
-                    {
-                        "__ansible_unsafe": "parent-rack-group"
-                    }
+                    "test-rack-group",
+                    "parent-rack-group"
                 ],
                 "manufacturers": [
-                    {
-                        "__ansible_unsafe": "cisco"
-                    }
+                    "cisco"
                 ],
-                "primary_ip4": {
-                    "__ansible_unsafe": "172.16.180.12"
-                },
+                "primary_ip4": "172.16.180.12",
                 "regions": [
-                    {
-                        "__ansible_unsafe": "test-region"
-                    },
-                    {
-                        "__ansible_unsafe": "parent-region"
-                    }
+                    "test-region",
+                    "parent-region"
                 ],
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
+                "serial": "",
                 "services": [],
                 "site_groups": [],
                 "sites": [
-                    {
-                        "__ansible_unsafe": "test-site"
-                    }
+                    "test-site"
                 ],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "Test VM With Spaces": {
-                "cluster": {
-                    "__ansible_unsafe": "Test Cluster 2"
-                },
-                "cluster_type": {
-                    "__ansible_unsafe": "test-cluster-type"
-                },
+                "cluster": "Test Cluster 2",
+                "cluster_type": "test-cluster-type",
                 "custom_fields": {},
                 "is_virtual": true,
                 "local_context_data": [
@@ -132,159 +345,228 @@
                 ],
                 "locations": [],
                 "regions": [],
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
+                "serial": "",
                 "services": [],
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "TestDeviceR1": {
                 "custom_fields": {},
                 "device_roles": [
-                    {
-                        "__ansible_unsafe": "core-switch"
-                    }
+                    "core-switch"
                 ],
                 "device_types": [
-                    {
-                        "__ansible_unsafe": "cisco-test"
-                    }
+                    "cisco-test"
                 ],
                 "is_virtual": false,
                 "local_context_data": [
                     null
                 ],
                 "locations": [
-                    {
-                        "__ansible_unsafe": "test-rack-group"
-                    },
-                    {
-                        "__ansible_unsafe": "parent-rack-group"
-                    }
+                    "test-rack-group",
+                    "parent-rack-group"
                 ],
                 "manufacturers": [
-                    {
-                        "__ansible_unsafe": "cisco"
-                    }
+                    "cisco"
                 ],
                 "racks": [
-                    {
-                        "__ansible_unsafe": "Test Rack"
-                    }
+                    "Test Rack"
                 ],
                 "regions": [
-                    {
-                        "__ansible_unsafe": "test-region"
-                    },
-                    {
-                        "__ansible_unsafe": "parent-region"
-                    }
+                    "test-region",
+                    "parent-region"
                 ],
-                "serial": {
-                    "__ansible_unsafe": "FAB12345678"
-                },
+                "serial": "FAB12345678",
                 "services": [],
                 "site_groups": [],
                 "sites": [
-                    {
-                        "__ansible_unsafe": "test-site"
-                    }
+                    "test-site"
                 ],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
-            "test100": {
-                "asset_tag": {
-                    "__ansible_unsafe": "123456789"
+            "Virtual Machine With Contact": {
+                "cluster": "Test Cluster",
+                "cluster_group": "test-cluster-group",
+                "cluster_type": "test-cluster-type",
+                "custom_fields": {},
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "regions": [],
+                "serial": "",
+                "services": [],
+                "site_groups": [],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
                 },
+                "tags": []
+            },
+            "b6b98683-14a0-4991-b4ac-b88e5fe81573": {
                 "custom_fields": {},
                 "device_roles": [
-                    {
-                        "__ansible_unsafe": "core-switch"
-                    }
+                    "core-switch"
                 ],
                 "device_types": [
-                    {
-                        "__ansible_unsafe": "cisco-test"
-                    }
+                    "cisco-test"
+                ],
+                "is_virtual": false,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "manufacturers": [
+                    "cisco"
+                ],
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [],
+                "sites": [
+                    "test-site"
+                ],
+                "status": {
+                    "label": "Staged",
+                    "value": "staged"
+                },
+                "tags": []
+            },
+            "issue-242": {
+                "asset_tag": "Null",
+                "custom_fields": {},
+                "device_roles": [
+                    "core-switch"
+                ],
+                "device_types": [
+                    "cisco-test"
+                ],
+                "is_virtual": false,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "manufacturers": [
+                    "cisco"
+                ],
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [],
+                "sites": [
+                    "test-site"
+                ],
+                "status": {
+                    "label": "Staged",
+                    "value": "staged"
+                },
+                "tags": [
+                    "first",
+                    "second",
+                    "third"
+                ]
+            },
+            "test100": {
+                "ansible_host": "2001::1:1",
+                "asset_tag": "123456789",
+                "custom_fields": {},
+                "device_roles": [
+                    "core-switch"
+                ],
+                "device_types": [
+                    "cisco-test"
                 ],
                 "is_virtual": false,
                 "local_context_data": [
                     {
                         "ntp_servers": [
-                            {
-                                "__ansible_unsafe": "pool.ntp.org"
-                            }
+                            "pool.ntp.org"
                         ]
                     }
                 ],
                 "locations": [
-                    {
-                        "__ansible_unsafe": "test-rack-group"
-                    },
-                    {
-                        "__ansible_unsafe": "parent-rack-group"
-                    }
+                    "test-rack-group",
+                    "parent-rack-group"
                 ],
                 "manufacturers": [
-                    {
-                        "__ansible_unsafe": "cisco"
-                    }
+                    "cisco"
                 ],
+                "primary_ip4": "172.16.180.1",
+                "primary_ip6": "2001::1:1",
                 "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "serial": "FAB01234567",
+                "services": [
                     {
-                        "__ansible_unsafe": "test-region"
-                    },
-                    {
-                        "__ansible_unsafe": "parent-region"
+                        "comments": "",
+                        "custom_fields": {},
+                        "description": "",
+                        "display": "node-exporter (UDP/9100)",
+                        "display_url": "http://localhost:32768/ipam/services/3/",
+                        "id": 3,
+                        "ipaddresses": [
+                            {
+                                "address": "172.16.180.1/24",
+                                "description": "",
+                                "display": "172.16.180.1/24",
+                                "family": {
+                                    "label": "IPv4",
+                                    "value": 4
+                                },
+                                "id": 1
+                            }
+                        ],
+                        "name": "node-exporter",
+                        "owner": null,
+                        "parent": {
+                            "description": "",
+                            "display": "test100 (123456789)",
+                            "id": 1,
+                            "name": "test100"
+                        },
+                        "parent_object_id": 1,
+                        "parent_object_type": "dcim.device",
+                        "ports": [
+                            9100
+                        ],
+                        "protocol": {
+                            "label": "UDP",
+                            "value": "udp"
+                        },
+                        "tags": []
                     }
                 ],
-                "serial": {
-                    "__ansible_unsafe": "FAB01234567"
-                },
-                "services": [],
                 "site_groups": [],
                 "sites": [
-                    {
-                        "__ansible_unsafe": "test-site"
-                    }
+                    "test-site"
                 ],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "test100-vm": {
-                "cluster": {
-                    "__ansible_unsafe": "Test Cluster"
-                },
-                "cluster_group": {
-                    "__ansible_unsafe": "test-cluster-group"
-                },
-                "cluster_type": {
-                    "__ansible_unsafe": "test-cluster-type"
-                },
+                "cluster": "Test Cluster",
+                "cluster_group": "test-cluster-group",
+                "cluster_type": "test-cluster-type",
                 "custom_fields": {},
                 "disk": 170,
                 "is_virtual": true,
@@ -293,31 +575,47 @@
                 ],
                 "locations": [],
                 "regions": [],
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
-                "services": [],
+                "serial": "",
+                "services": [
+                    {
+                        "comments": "",
+                        "custom_fields": {},
+                        "description": "",
+                        "display": "node-exporter-vm (TCP/9100)",
+                        "display_url": "http://localhost:32768/ipam/services/4/",
+                        "id": 4,
+                        "ipaddresses": [],
+                        "name": "node-exporter-vm",
+                        "owner": null,
+                        "parent": {
+                            "description": "",
+                            "display": "test100-vm",
+                            "id": 1,
+                            "name": "test100-vm"
+                        },
+                        "parent_object_id": 1,
+                        "parent_object_type": "virtualization.virtualmachine",
+                        "ports": [
+                            9100
+                        ],
+                        "protocol": {
+                            "label": "TCP",
+                            "value": "tcp"
+                        },
+                        "tags": []
+                    }
+                ],
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "test101-vm": {
-                "cluster": {
-                    "__ansible_unsafe": "Test Cluster"
-                },
-                "cluster_group": {
-                    "__ansible_unsafe": "test-cluster-group"
-                },
-                "cluster_type": {
-                    "__ansible_unsafe": "test-cluster-type"
-                },
+                "cluster": "Test Cluster",
+                "cluster_group": "test-cluster-group",
+                "cluster_type": "test-cluster-type",
                 "custom_fields": {},
                 "is_virtual": true,
                 "local_context_data": [
@@ -325,31 +623,19 @@
                 ],
                 "locations": [],
                 "regions": [],
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
+                "serial": "",
                 "services": [],
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "test102-vm": {
-                "cluster": {
-                    "__ansible_unsafe": "Test Cluster"
-                },
-                "cluster_group": {
-                    "__ansible_unsafe": "test-cluster-group"
-                },
-                "cluster_type": {
-                    "__ansible_unsafe": "test-cluster-type"
-                },
+                "cluster": "Test Cluster",
+                "cluster_group": "test-cluster-group",
+                "cluster_type": "test-cluster-type",
                 "custom_fields": {},
                 "is_virtual": true,
                 "local_context_data": [
@@ -357,31 +643,19 @@
                 ],
                 "locations": [],
                 "regions": [],
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
+                "serial": "",
                 "services": [],
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "test103-vm": {
-                "cluster": {
-                    "__ansible_unsafe": "Test Cluster"
-                },
-                "cluster_group": {
-                    "__ansible_unsafe": "test-cluster-group"
-                },
-                "cluster_type": {
-                    "__ansible_unsafe": "test-cluster-type"
-                },
+                "cluster": "Test Cluster",
+                "cluster_group": "test-cluster-group",
+                "cluster_type": "test-cluster-type",
                 "custom_fields": {},
                 "is_virtual": true,
                 "local_context_data": [
@@ -389,28 +663,18 @@
                 ],
                 "locations": [],
                 "regions": [],
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
+                "serial": "",
                 "services": [],
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "test104-vm": {
-                "cluster": {
-                    "__ansible_unsafe": "Test Cluster 2"
-                },
-                "cluster_type": {
-                    "__ansible_unsafe": "test-cluster-type"
-                },
+                "cluster": "Test Cluster 2",
+                "cluster_type": "test-cluster-type",
                 "custom_fields": {},
                 "is_virtual": true,
                 "local_context_data": [
@@ -418,23 +682,16 @@
                 ],
                 "locations": [],
                 "regions": [],
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
+                "serial": "",
                 "services": [],
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             }
-        },
-        "profile": "inventory_legacy"
+        }
     },
     "all": {
         "children": [
@@ -443,6 +700,15 @@
     },
     "ungrouped": {
         "hosts": [
+            "b6b98683-14a0-4991-b4ac-b88e5fe81573",
+            "Device Power Tests",
+            "Device Virtual Chassis Tests",
+            "Device Virtual Chassis Tests 2",
+            "Device With Contact",
+            "FOR_SERVICE",
+            "issue-242",
+            "L1",
+            "L2",
             "R1-Device",
             "Test Nexus One",
             "test100",
@@ -452,7 +718,8 @@
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm"
+            "test104-vm",
+            "Virtual Machine With Contact"
         ]
     }
 }

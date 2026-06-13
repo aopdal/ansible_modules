@@ -68,7 +68,7 @@
       - test_three is changed
       - test_three['token']['description'] == "The test token"
       - test_three['token']['write_enabled'] == false
-      - test_three['token']['expires'] == "2024-08-26T14:49:01.345000Z"
+      - test_three['token']['expires'] == "2024-08-26T14:49:01.345000+00:00"
       - test_three['msg'] == "token ******** updated"
 
 - name: "TOKEN 4: Delete"

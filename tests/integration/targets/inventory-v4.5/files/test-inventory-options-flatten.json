@@ -4,7 +4,8 @@
             "test100-vm",
             "test101-vm",
             "test102-vm",
-            "test103-vm"
+            "test103-vm",
+            "Virtual Machine With Contact"
         ]
     },
     "Test_Cluster_2": {
@@ -25,57 +26,8 @@
     },
     "_meta": {
         "hostvars": {
-            "R1-Device": {
-                "asset_tag": {
-                    "__ansible_unsafe": "345678901"
-                },
-                "device_type": {
-                    "__ansible_unsafe": "cisco-test"
-                },
-                "interfaces": [],
-                "is_virtual": false,
-                "locations": [],
-                "manufacturer": {
-                    "__ansible_unsafe": "cisco"
-                },
-                "rack": {
-                    "__ansible_unsafe": "Test Rack Site 2"
-                },
-                "rack_role": {
-                    "__ansible_unsafe": "test-rack-role"
-                },
-                "regions": [],
-                "role": {
-                    "__ansible_unsafe": "core-switch"
-                },
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
-                "services": [],
-                "site": {
-                    "__ansible_unsafe": "test-site2"
-                },
-                "site_groups": [],
-                "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
-                },
-                "tags": []
-            },
-            "Test Nexus One": {
-                "ansible_host": {
-                    "__ansible_unsafe": "172.16.180.12"
-                },
-                "device_type": {
-                    "__ansible_unsafe": "nexus-parent"
-                },
-                "dns_name": {
-                    "__ansible_unsafe": "nexus.example.com"
-                },
+            "Device Power Tests": {
+                "device_type": "cisco-test",
                 "interfaces": [
                     {
                         "_occupied": false,
@@ -87,81 +39,23 @@
                         "connected_endpoints_reachable": null,
                         "connected_endpoints_type": null,
                         "count_fhrp_groups": 0,
-                        "count_ipaddresses": 1,
+                        "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
+                        "description": "",
                         "device": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "Test Nexus One"
-                            },
-                            "id": 4,
-                            "name": {
-                                "__ansible_unsafe": "Test Nexus One"
-                            }
+                            "description": "",
+                            "display": "Device Power Tests",
+                            "id": 11,
+                            "name": "Device Power Tests"
                         },
-                        "display": {
-                            "__ansible_unsafe": "Ethernet1/1"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/dcim/interfaces/1/"
-                        },
+                        "display": "SFP+ (10GE)",
+                        "display_url": "http://localhost:32768/dcim/interfaces/18/",
                         "duplex": null,
                         "enabled": true,
-                        "id": 1,
-                        "ip_addresses": [
-                            {
-                                "address": {
-                                    "__ansible_unsafe": "172.16.180.11/24"
-                                },
-                                "comments": {
-                                    "__ansible_unsafe": ""
-                                },
-                                "custom_fields": {},
-                                "description": {
-                                    "__ansible_unsafe": ""
-                                },
-                                "display": {
-                                    "__ansible_unsafe": "172.16.180.11/24"
-                                },
-                                "display_url": {
-                                    "__ansible_unsafe": "http://localhost:32768/ipam/ip-addresses/3/"
-                                },
-                                "dns_name": {
-                                    "__ansible_unsafe": ""
-                                },
-                                "family": {
-                                    "label": {
-                                        "__ansible_unsafe": "IPv4"
-                                    },
-                                    "value": 4
-                                },
-                                "id": 3,
-                                "nat_inside": null,
-                                "nat_outside": [],
-                                "owner": null,
-                                "role": null,
-                                "status": {
-                                    "label": {
-                                        "__ansible_unsafe": "Active"
-                                    },
-                                    "value": {
-                                        "__ansible_unsafe": "active"
-                                    }
-                                },
-                                "tags": [],
-                                "tenant": null,
-                                "vrf": null
-                            }
-                        ],
+                        "id": 18,
+                        "ip_addresses": [],
                         "l2vpn_termination": null,
-                        "label": {
-                            "__ansible_unsafe": ""
-                        },
+                        "label": "",
                         "lag": null,
                         "link_peers": [],
                         "link_peers_type": null,
@@ -172,9 +66,7 @@
                         "mode": null,
                         "module": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "Ethernet1/1"
-                        },
+                        "name": "SFP+ (10GE)",
                         "owner": null,
                         "parent": null,
                         "poe_mode": null,
@@ -190,12 +82,826 @@
                         "tags": [],
                         "tx_power": null,
                         "type": {
-                            "label": {
-                                "__ansible_unsafe": "1000BASE-T (1GE)"
-                            },
-                            "value": {
-                                "__ansible_unsafe": "1000base-t"
+                            "label": "SFP+ (10GE)",
+                            "value": "10gbase-x-sfpp"
+                        },
+                        "untagged_vlan": null,
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": null,
+                        "wwn": null
+                    }
+                ],
+                "is_virtual": false,
+                "locations": [],
+                "manufacturer": "cisco",
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "role": "core-switch",
+                "serial": "",
+                "services": [],
+                "site": "test-site",
+                "site_groups": [],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": []
+            },
+            "Device Virtual Chassis Tests": {
+                "device_type": "cisco-test",
+                "interfaces": [
+                    {
+                        "_occupied": false,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": null,
+                        "connected_endpoints_reachable": null,
+                        "connected_endpoints_type": null,
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 0,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "Device Virtual Chassis Tests",
+                            "id": 12,
+                            "name": "Device Virtual Chassis Tests"
+                        },
+                        "display": "SFP+ (10GE)",
+                        "display_url": "http://localhost:32768/dcim/interfaces/19/",
+                        "duplex": null,
+                        "enabled": true,
+                        "id": 19,
+                        "ip_addresses": [],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": null,
+                        "link_peers": [],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [],
+                        "mark_connected": false,
+                        "mgmt_only": false,
+                        "mode": null,
+                        "module": null,
+                        "mtu": null,
+                        "name": "SFP+ (10GE)",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": null,
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "SFP+ (10GE)",
+                            "value": "10gbase-x-sfpp"
+                        },
+                        "untagged_vlan": null,
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": null,
+                        "wwn": null
+                    }
+                ],
+                "is_virtual": false,
+                "locations": [],
+                "manufacturer": "cisco",
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "role": "core-switch",
+                "serial": "",
+                "services": [],
+                "site": "test-site",
+                "site_groups": [],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": []
+            },
+            "Device Virtual Chassis Tests 2": {
+                "device_type": "cisco-test",
+                "interfaces": [
+                    {
+                        "_occupied": false,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": null,
+                        "connected_endpoints_reachable": null,
+                        "connected_endpoints_type": null,
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 0,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "Device Virtual Chassis Tests 2",
+                            "id": 13,
+                            "name": "Device Virtual Chassis Tests 2"
+                        },
+                        "display": "SFP+ (10GE)",
+                        "display_url": "http://localhost:32768/dcim/interfaces/20/",
+                        "duplex": null,
+                        "enabled": true,
+                        "id": 20,
+                        "ip_addresses": [],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": null,
+                        "link_peers": [],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [],
+                        "mark_connected": false,
+                        "mgmt_only": false,
+                        "mode": null,
+                        "module": null,
+                        "mtu": null,
+                        "name": "SFP+ (10GE)",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": null,
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "SFP+ (10GE)",
+                            "value": "10gbase-x-sfpp"
+                        },
+                        "untagged_vlan": null,
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": null,
+                        "wwn": null
+                    }
+                ],
+                "is_virtual": false,
+                "locations": [],
+                "manufacturer": "cisco",
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "role": "core-switch",
+                "serial": "",
+                "services": [],
+                "site": "test-site",
+                "site_groups": [],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": []
+            },
+            "Device With Contact": {
+                "device_type": "cisco-test",
+                "interfaces": [
+                    {
+                        "_occupied": false,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": null,
+                        "connected_endpoints_reachable": null,
+                        "connected_endpoints_type": null,
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 0,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "Device With Contact",
+                            "id": 10,
+                            "name": "Device With Contact"
+                        },
+                        "display": "SFP+ (10GE)",
+                        "display_url": "http://localhost:32768/dcim/interfaces/17/",
+                        "duplex": null,
+                        "enabled": true,
+                        "id": 17,
+                        "ip_addresses": [],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": null,
+                        "link_peers": [],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [],
+                        "mark_connected": false,
+                        "mgmt_only": false,
+                        "mode": null,
+                        "module": null,
+                        "mtu": null,
+                        "name": "SFP+ (10GE)",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": null,
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "SFP+ (10GE)",
+                            "value": "10gbase-x-sfpp"
+                        },
+                        "untagged_vlan": null,
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": null,
+                        "wwn": null
+                    }
+                ],
+                "is_virtual": false,
+                "locations": [],
+                "manufacturer": "cisco",
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "role": "core-switch",
+                "serial": "",
+                "services": [],
+                "site": "test-site",
+                "site_groups": [],
+                "status": {
+                    "label": "Staged",
+                    "value": "staged"
+                },
+                "tags": []
+            },
+            "FOR_SERVICE": {
+                "device_type": "cisco-test",
+                "interfaces": [
+                    {
+                        "_occupied": false,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": null,
+                        "connected_endpoints_reachable": null,
+                        "connected_endpoints_type": null,
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 0,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "FOR_SERVICE",
+                            "id": 14,
+                            "name": "FOR_SERVICE"
+                        },
+                        "display": "SFP+ (10GE)",
+                        "display_url": "http://localhost:32768/dcim/interfaces/21/",
+                        "duplex": null,
+                        "enabled": true,
+                        "id": 21,
+                        "ip_addresses": [],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": null,
+                        "link_peers": [],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [],
+                        "mark_connected": false,
+                        "mgmt_only": false,
+                        "mode": null,
+                        "module": null,
+                        "mtu": null,
+                        "name": "SFP+ (10GE)",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": null,
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "SFP+ (10GE)",
+                            "value": "10gbase-x-sfpp"
+                        },
+                        "untagged_vlan": null,
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": null,
+                        "wwn": null
+                    }
+                ],
+                "is_virtual": false,
+                "locations": [],
+                "manufacturer": "cisco",
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "role": "core-switch",
+                "serial": "",
+                "services": [
+                    {
+                        "comments": "",
+                        "custom_fields": {},
+                        "description": "",
+                        "display": "node-exporter (TCP/9100, 9200)",
+                        "display_url": "http://localhost:32768/ipam/services/1/",
+                        "id": 1,
+                        "ipaddresses": [],
+                        "name": "node-exporter",
+                        "owner": null,
+                        "parent": {
+                            "description": "",
+                            "display": "FOR_SERVICE",
+                            "id": 14,
+                            "name": "FOR_SERVICE"
+                        },
+                        "parent_object_id": 14,
+                        "parent_object_type": "dcim.device",
+                        "ports": [
+                            9100,
+                            9200
+                        ],
+                        "protocol": {
+                            "label": "TCP",
+                            "value": "tcp"
+                        },
+                        "tags": [
+                            {
+                                "color": "9e9e9e",
+                                "display": "Schnozzberry",
+                                "display_url": "http://localhost:32768/extras/tags/4/",
+                                "id": 4,
+                                "name": "Schnozzberry",
+                                "slug": "schnozzberry"
                             }
+                        ]
+                    }
+                ],
+                "site": "test-site",
+                "site_groups": [],
+                "status": {
+                    "label": "Staged",
+                    "value": "staged"
+                },
+                "tags": []
+            },
+            "L1": {
+                "device_type": "cisco-test",
+                "interfaces": [
+                    {
+                        "_occupied": false,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": null,
+                        "connected_endpoints_reachable": null,
+                        "connected_endpoints_type": null,
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 0,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "L1",
+                            "id": 15,
+                            "name": "L1"
+                        },
+                        "display": "SFP+ (10GE)",
+                        "display_url": "http://localhost:32768/dcim/interfaces/22/",
+                        "duplex": null,
+                        "enabled": true,
+                        "id": 22,
+                        "ip_addresses": [],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": null,
+                        "link_peers": [],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [],
+                        "mark_connected": false,
+                        "mgmt_only": false,
+                        "mode": null,
+                        "module": null,
+                        "mtu": null,
+                        "name": "SFP+ (10GE)",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": null,
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "SFP+ (10GE)",
+                            "value": "10gbase-x-sfpp"
+                        },
+                        "untagged_vlan": null,
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": null,
+                        "wwn": null
+                    }
+                ],
+                "is_virtual": false,
+                "locations": [],
+                "manufacturer": "cisco",
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "role": "core-switch",
+                "serial": "",
+                "services": [],
+                "site": "test-site",
+                "site_groups": [],
+                "status": {
+                    "label": "Staged",
+                    "value": "staged"
+                },
+                "tags": [
+                    "nolookup"
+                ]
+            },
+            "L2": {
+                "device_type": "cisco-test",
+                "interfaces": [
+                    {
+                        "_occupied": false,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": null,
+                        "connected_endpoints_reachable": null,
+                        "connected_endpoints_type": null,
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 0,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "L2",
+                            "id": 16,
+                            "name": "L2"
+                        },
+                        "display": "SFP+ (10GE)",
+                        "display_url": "http://localhost:32768/dcim/interfaces/23/",
+                        "duplex": null,
+                        "enabled": true,
+                        "id": 23,
+                        "ip_addresses": [],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": null,
+                        "link_peers": [],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [],
+                        "mark_connected": false,
+                        "mgmt_only": false,
+                        "mode": null,
+                        "module": null,
+                        "mtu": null,
+                        "name": "SFP+ (10GE)",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": null,
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "SFP+ (10GE)",
+                            "value": "10gbase-x-sfpp"
+                        },
+                        "untagged_vlan": null,
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": null,
+                        "wwn": null
+                    }
+                ],
+                "is_virtual": false,
+                "locations": [],
+                "manufacturer": "cisco",
+                "regions": [],
+                "role": "core-switch",
+                "serial": "",
+                "services": [],
+                "site": "test-site2",
+                "site_groups": [],
+                "status": {
+                    "label": "Staged",
+                    "value": "staged"
+                },
+                "tags": [
+                    "lookup"
+                ]
+            },
+            "R1-Device": {
+                "asset_tag": "345678901",
+                "device_type": "cisco-test",
+                "interfaces": [
+                    {
+                        "_occupied": false,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": null,
+                        "connected_endpoints_reachable": null,
+                        "connected_endpoints_type": null,
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 0,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "R1-Device (345678901)",
+                            "id": 3,
+                            "name": "R1-Device"
+                        },
+                        "display": "port-channel1",
+                        "display_url": "http://localhost:32768/dcim/interfaces/13/",
+                        "duplex": null,
+                        "enabled": true,
+                        "id": 13,
+                        "ip_addresses": [],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": null,
+                        "link_peers": [],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [],
+                        "mark_connected": false,
+                        "mgmt_only": false,
+                        "mode": null,
+                        "module": null,
+                        "mtu": null,
+                        "name": "port-channel1",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": null,
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "Link Aggregation Group (LAG)",
+                            "value": "lag"
+                        },
+                        "untagged_vlan": null,
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": null,
+                        "wwn": null
+                    }
+                ],
+                "is_virtual": false,
+                "locations": [],
+                "manufacturer": "cisco",
+                "rack": "Test Rack Site 2",
+                "rack_role": "test-rack-role",
+                "regions": [],
+                "role": "core-switch",
+                "serial": "",
+                "services": [],
+                "site": "test-site2",
+                "site_groups": [],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": []
+            },
+            "Test Nexus One": {
+                "ansible_host": "172.16.180.12",
+                "device_type": "nexus-parent",
+                "dns_name": "nexus.example.com",
+                "interfaces": [
+                    {
+                        "_occupied": false,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": null,
+                        "connected_endpoints_reachable": null,
+                        "connected_endpoints_type": null,
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 3,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "Test Nexus One",
+                            "id": 4,
+                            "name": "Test Nexus One"
+                        },
+                        "display": "Ethernet1/1",
+                        "display_url": "http://localhost:32768/dcim/interfaces/1/",
+                        "duplex": null,
+                        "enabled": true,
+                        "id": 1,
+                        "ip_addresses": [
+                            {
+                                "address": "1.121.121.121/32",
+                                "comments": "",
+                                "custom_fields": {},
+                                "description": "ansible-netbox-1.2.1",
+                                "display": "1.121.121.121/32",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/9/",
+                                "dns_name": "ansible-netbox-1.2.1",
+                                "family": {
+                                    "label": "IPv4",
+                                    "value": 4
+                                },
+                                "id": 9,
+                                "nat_inside": null,
+                                "nat_outside": [],
+                                "owner": null,
+                                "role": {
+                                    "label": "HSRP",
+                                    "value": "hsrp"
+                                },
+                                "status": {
+                                    "label": "Active",
+                                    "value": "active"
+                                },
+                                "tags": [],
+                                "tenant": null,
+                                "vrf": null
+                            },
+                            {
+                                "address": "121.121.121.121/32",
+                                "comments": "",
+                                "custom_fields": {},
+                                "description": "ansible-netbox-1.2.1",
+                                "display": "121.121.121.121/32",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/7/",
+                                "dns_name": "ansible-netbox-1.2.1",
+                                "family": {
+                                    "label": "IPv4",
+                                    "value": 4
+                                },
+                                "id": 7,
+                                "nat_inside": null,
+                                "nat_outside": [],
+                                "owner": null,
+                                "role": {
+                                    "label": "HSRP",
+                                    "value": "hsrp"
+                                },
+                                "status": {
+                                    "label": "Active",
+                                    "value": "active"
+                                },
+                                "tags": [],
+                                "tenant": null,
+                                "vrf": null
+                            },
+                            {
+                                "address": "172.16.180.11/24",
+                                "comments": "",
+                                "custom_fields": {},
+                                "description": "",
+                                "display": "172.16.180.11/24",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/3/",
+                                "dns_name": "",
+                                "family": {
+                                    "label": "IPv4",
+                                    "value": 4
+                                },
+                                "id": 3,
+                                "nat_inside": null,
+                                "nat_outside": [],
+                                "owner": null,
+                                "role": null,
+                                "status": {
+                                    "label": "Active",
+                                    "value": "active"
+                                },
+                                "tags": [],
+                                "tenant": null,
+                                "vrf": null
+                            }
+                        ],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": null,
+                        "link_peers": [],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [
+                            {
+                                "description": "Test MAC address",
+                                "display": "AA:BB:CC:DD:EE:F0",
+                                "id": 8,
+                                "mac_address": "AA:BB:CC:DD:EE:F0"
+                            }
+                        ],
+                        "mark_connected": false,
+                        "mgmt_only": false,
+                        "mode": null,
+                        "module": null,
+                        "mtu": null,
+                        "name": "Ethernet1/1",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": null,
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "1000BASE-T (1GE)",
+                            "value": "1000base-t"
                         },
                         "untagged_vlan": null,
                         "vdcs": [],
@@ -215,57 +921,87 @@
                         "connected_endpoints_reachable": null,
                         "connected_endpoints_type": null,
                         "count_fhrp_groups": 0,
-                        "count_ipaddresses": 1,
+                        "count_ipaddresses": 3,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
+                        "description": "",
                         "device": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "Test Nexus Child One"
-                            },
+                            "description": "",
+                            "display": "Test Nexus Child One",
                             "id": 5,
-                            "name": {
-                                "__ansible_unsafe": "Test Nexus Child One"
-                            }
+                            "name": "Test Nexus Child One"
                         },
-                        "display": {
-                            "__ansible_unsafe": "Ethernet2/1"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/dcim/interfaces/2/"
-                        },
+                        "display": "Ethernet2/1",
+                        "display_url": "http://localhost:32768/dcim/interfaces/2/",
                         "duplex": null,
                         "enabled": true,
                         "id": 2,
                         "ip_addresses": [
                             {
-                                "address": {
-                                    "__ansible_unsafe": "172.16.180.12/24"
-                                },
-                                "comments": {
-                                    "__ansible_unsafe": ""
-                                },
+                                "address": "1.121.121.121/32",
+                                "comments": "",
                                 "custom_fields": {},
-                                "description": {
-                                    "__ansible_unsafe": ""
-                                },
-                                "display": {
-                                    "__ansible_unsafe": "172.16.180.12/24"
-                                },
-                                "display_url": {
-                                    "__ansible_unsafe": "http://localhost:32768/ipam/ip-addresses/4/"
-                                },
-                                "dns_name": {
-                                    "__ansible_unsafe": "nexus.example.com"
-                                },
+                                "description": "ansible-netbox-1.2.1",
+                                "display": "1.121.121.121/32",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/10/",
+                                "dns_name": "ansible-netbox-1.2.1",
                                 "family": {
-                                    "label": {
-                                        "__ansible_unsafe": "IPv4"
-                                    },
+                                    "label": "IPv4",
+                                    "value": 4
+                                },
+                                "id": 10,
+                                "nat_inside": null,
+                                "nat_outside": [],
+                                "owner": null,
+                                "role": {
+                                    "label": "HSRP",
+                                    "value": "hsrp"
+                                },
+                                "status": {
+                                    "label": "Active",
+                                    "value": "active"
+                                },
+                                "tags": [],
+                                "tenant": null,
+                                "vrf": null
+                            },
+                            {
+                                "address": "121.121.121.121/32",
+                                "comments": "",
+                                "custom_fields": {},
+                                "description": "ansible-netbox-1.2.1",
+                                "display": "121.121.121.121/32",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/8/",
+                                "dns_name": "ansible-netbox-1.2.1",
+                                "family": {
+                                    "label": "IPv4",
+                                    "value": 4
+                                },
+                                "id": 8,
+                                "nat_inside": null,
+                                "nat_outside": [],
+                                "owner": null,
+                                "role": {
+                                    "label": "HSRP",
+                                    "value": "hsrp"
+                                },
+                                "status": {
+                                    "label": "Active",
+                                    "value": "active"
+                                },
+                                "tags": [],
+                                "tenant": null,
+                                "vrf": null
+                            },
+                            {
+                                "address": "172.16.180.12/24",
+                                "comments": "",
+                                "custom_fields": {},
+                                "description": "",
+                                "display": "172.16.180.12/24",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/4/",
+                                "dns_name": "nexus.example.com",
+                                "family": {
+                                    "label": "IPv4",
                                     "value": 4
                                 },
                                 "id": 4,
@@ -274,12 +1010,8 @@
                                 "owner": null,
                                 "role": null,
                                 "status": {
-                                    "label": {
-                                        "__ansible_unsafe": "Active"
-                                    },
-                                    "value": {
-                                        "__ansible_unsafe": "active"
-                                    }
+                                    "label": "Active",
+                                    "value": "active"
                                 },
                                 "tags": [],
                                 "tenant": null,
@@ -287,9 +1019,7 @@
                             }
                         ],
                         "l2vpn_termination": null,
-                        "label": {
-                            "__ansible_unsafe": ""
-                        },
+                        "label": "",
                         "lag": null,
                         "link_peers": [],
                         "link_peers_type": null,
@@ -300,9 +1030,7 @@
                         "mode": null,
                         "module": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "Ethernet2/1"
-                        },
+                        "name": "Ethernet2/1",
                         "owner": null,
                         "parent": null,
                         "poe_mode": null,
@@ -318,12 +1046,8 @@
                         "tags": [],
                         "tx_power": null,
                         "type": {
-                            "label": {
-                                "__ansible_unsafe": "1000BASE-T (1GE)"
-                            },
-                            "value": {
-                                "__ansible_unsafe": "1000base-t"
-                            }
+                            "label": "1000BASE-T (1GE)",
+                            "value": "1000base-t"
                         },
                         "untagged_vlan": null,
                         "vdcs": [],
@@ -331,6 +1055,105 @@
                         "vrf": null,
                         "wireless_lans": [],
                         "wireless_link": null,
+                        "wwn": null
+                    },
+                    {
+                        "_occupied": true,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": [
+                            {
+                                "_occupied": true,
+                                "cable": null,
+                                "description": "",
+                                "device": {
+                                    "description": "",
+                                    "display": "test100 (123456789)",
+                                    "id": 1,
+                                    "name": "test100"
+                                },
+                                "display": "wlink1",
+                                "id": 5,
+                                "name": "wlink1"
+                            }
+                        ],
+                        "connected_endpoints_reachable": true,
+                        "connected_endpoints_type": "dcim.interface",
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 0,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "Test Nexus One",
+                            "id": 4,
+                            "name": "Test Nexus One"
+                        },
+                        "display": "wlink1",
+                        "display_url": "http://localhost:32768/dcim/interfaces/6/",
+                        "duplex": null,
+                        "enabled": true,
+                        "id": 6,
+                        "ip_addresses": [],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": null,
+                        "link_peers": [
+                            {
+                                "_occupied": true,
+                                "cable": null,
+                                "description": "",
+                                "device": {
+                                    "description": "",
+                                    "display": "test100 (123456789)",
+                                    "id": 1,
+                                    "name": "test100"
+                                },
+                                "display": "wlink1",
+                                "id": 5,
+                                "name": "wlink1"
+                            }
+                        ],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [],
+                        "mark_connected": false,
+                        "mgmt_only": false,
+                        "mode": null,
+                        "module": null,
+                        "mtu": null,
+                        "name": "wlink1",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": null,
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "IEEE 802.11a",
+                            "value": "ieee802.11a"
+                        },
+                        "untagged_vlan": null,
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": {
+                            "display": "Wireless Network One",
+                            "display_url": "http://localhost:32768/wireless/wireless-links/2/",
+                            "id": 2,
+                            "ssid": "Wireless Network One"
+                        },
                         "wwn": null
                     },
                     {
@@ -345,35 +1168,21 @@
                         "count_fhrp_groups": 0,
                         "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
+                        "description": "Updated child interface from parent device",
                         "device": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "Test Nexus One"
-                            },
-                            "id": 4,
-                            "name": {
-                                "__ansible_unsafe": "Test Nexus One"
-                            }
+                            "description": "",
+                            "display": "Test Nexus Child One",
+                            "id": 5,
+                            "name": "Test Nexus Child One"
                         },
-                        "display": {
-                            "__ansible_unsafe": "wlink1"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/dcim/interfaces/6/"
-                        },
+                        "display": "Ethernet2/2",
+                        "display_url": "http://localhost:32768/dcim/interfaces/15/",
                         "duplex": null,
                         "enabled": true,
-                        "id": 6,
+                        "id": 15,
                         "ip_addresses": [],
                         "l2vpn_termination": null,
-                        "label": {
-                            "__ansible_unsafe": ""
-                        },
+                        "label": "",
                         "lag": null,
                         "link_peers": [],
                         "link_peers_type": null,
@@ -384,9 +1193,7 @@
                         "mode": null,
                         "module": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "wlink1"
-                        },
+                        "name": "Ethernet2/2",
                         "owner": null,
                         "parent": null,
                         "poe_mode": null,
@@ -402,12 +1209,8 @@
                         "tags": [],
                         "tx_power": null,
                         "type": {
-                            "label": {
-                                "__ansible_unsafe": "IEEE 802.11a"
-                            },
-                            "value": {
-                                "__ansible_unsafe": "ieee802.11a"
-                            }
+                            "label": "1000BASE-T (1GE)",
+                            "value": "1000base-t"
                         },
                         "untagged_vlan": null,
                         "vdcs": [],
@@ -420,70 +1223,38 @@
                 ],
                 "is_virtual": false,
                 "locations": [
-                    {
-                        "__ansible_unsafe": "test-rack-group"
-                    },
-                    {
-                        "__ansible_unsafe": "parent-rack-group"
-                    }
+                    "test-rack-group",
+                    "parent-rack-group"
                 ],
-                "manufacturer": {
-                    "__ansible_unsafe": "cisco"
-                },
-                "primary_ip4": {
-                    "__ansible_unsafe": "172.16.180.12"
-                },
+                "manufacturer": "cisco",
+                "primary_ip4": "172.16.180.12",
                 "regions": [
-                    {
-                        "__ansible_unsafe": "test-region"
-                    },
-                    {
-                        "__ansible_unsafe": "parent-region"
-                    }
+                    "test-region",
+                    "parent-region"
                 ],
-                "role": {
-                    "__ansible_unsafe": "core-switch"
-                },
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
+                "role": "core-switch",
+                "serial": "",
                 "services": [],
-                "site": {
-                    "__ansible_unsafe": "test-site"
-                },
+                "site": "test-site",
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "Test VM With Spaces": {
-                "cluster": {
-                    "__ansible_unsafe": "Test Cluster 2"
-                },
-                "cluster_type": {
-                    "__ansible_unsafe": "test-cluster-type"
-                },
+                "cluster": "Test Cluster 2",
+                "cluster_type": "test-cluster-type",
                 "interfaces": [
                     {
                         "bridge": null,
                         "count_fhrp_groups": 0,
                         "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
-                        "display": {
-                            "__ansible_unsafe": "Eth0"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/virtualization/interfaces/11/"
-                        },
+                        "description": "",
+                        "display": "Eth0",
+                        "display_url": "http://localhost:32768/virtualization/interfaces/11/",
                         "enabled": true,
                         "id": 11,
                         "ip_addresses": [],
@@ -492,9 +1263,7 @@
                         "mac_addresses": [],
                         "mode": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "Eth0"
-                        },
+                        "name": "Eth0",
                         "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
@@ -503,16 +1272,10 @@
                         "tags": [],
                         "untagged_vlan": null,
                         "virtual_machine": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "Test VM With Spaces"
-                            },
+                            "description": "",
+                            "display": "Test VM With Spaces",
                             "id": 6,
-                            "name": {
-                                "__ansible_unsafe": "Test VM With Spaces"
-                            }
+                            "name": "Test VM With Spaces"
                         },
                         "vlan_translation_policy": null,
                         "vrf": null
@@ -522,15 +1285,9 @@
                         "count_fhrp_groups": 0,
                         "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
-                        "display": {
-                            "__ansible_unsafe": "Eth1"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/virtualization/interfaces/12/"
-                        },
+                        "description": "",
+                        "display": "Eth1",
+                        "display_url": "http://localhost:32768/virtualization/interfaces/12/",
                         "enabled": true,
                         "id": 12,
                         "ip_addresses": [],
@@ -539,9 +1296,7 @@
                         "mac_addresses": [],
                         "mode": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "Eth1"
-                        },
+                        "name": "Eth1",
                         "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
@@ -550,16 +1305,10 @@
                         "tags": [],
                         "untagged_vlan": null,
                         "virtual_machine": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "Test VM With Spaces"
-                            },
+                            "description": "",
+                            "display": "Test VM With Spaces",
                             "id": 6,
-                            "name": {
-                                "__ansible_unsafe": "Test VM With Spaces"
-                            }
+                            "name": "Test VM With Spaces"
                         },
                         "vlan_translation_policy": null,
                         "vrf": null
@@ -568,77 +1317,59 @@
                 "is_virtual": true,
                 "locations": [],
                 "regions": [],
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
+                "serial": "",
                 "services": [],
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "TestDeviceR1": {
-                "device_type": {
-                    "__ansible_unsafe": "cisco-test"
-                },
+                "device_type": "cisco-test",
                 "interfaces": [],
                 "is_virtual": false,
                 "locations": [
-                    {
-                        "__ansible_unsafe": "test-rack-group"
-                    },
-                    {
-                        "__ansible_unsafe": "parent-rack-group"
-                    }
+                    "test-rack-group",
+                    "parent-rack-group"
                 ],
-                "manufacturer": {
-                    "__ansible_unsafe": "cisco"
-                },
-                "rack": {
-                    "__ansible_unsafe": "Test Rack"
-                },
+                "manufacturer": "cisco",
+                "rack": "Test Rack",
                 "regions": [
-                    {
-                        "__ansible_unsafe": "test-region"
-                    },
-                    {
-                        "__ansible_unsafe": "parent-region"
-                    }
+                    "test-region",
+                    "parent-region"
                 ],
-                "role": {
-                    "__ansible_unsafe": "core-switch"
-                },
-                "serial": {
-                    "__ansible_unsafe": "FAB12345678"
-                },
+                "role": "core-switch",
+                "serial": "FAB12345678",
                 "services": [],
-                "site": {
-                    "__ansible_unsafe": "test-site"
-                },
+                "site": "test-site",
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
-            "test100": {
-                "asset_tag": {
-                    "__ansible_unsafe": "123456789"
+            "Virtual Machine With Contact": {
+                "cluster": "Test Cluster",
+                "cluster_group": "test-cluster-group",
+                "cluster_type": "test-cluster-type",
+                "interfaces": [],
+                "is_virtual": true,
+                "locations": [],
+                "regions": [],
+                "serial": "",
+                "services": [],
+                "site_groups": [],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
                 },
-                "device_type": {
-                    "__ansible_unsafe": "cisco-test"
-                },
+                "tags": []
+            },
+            "b6b98683-14a0-4991-b4ac-b88e5fe81573": {
+                "device_type": "cisco-test",
                 "interfaces": [
                     {
                         "_occupied": false,
@@ -650,57 +1381,170 @@
                         "connected_endpoints_reachable": null,
                         "connected_endpoints_type": null,
                         "count_fhrp_groups": 0,
-                        "count_ipaddresses": 1,
+                        "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
+                        "description": "",
                         "device": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "test100 (123456789)"
-                            },
+                            "description": "",
+                            "display": "b6b98683-14a0-4991-b4ac-b88e5fe81573",
+                            "id": 9,
+                            "name": "b6b98683-14a0-4991-b4ac-b88e5fe81573"
+                        },
+                        "display": "SFP+ (10GE)",
+                        "display_url": "http://localhost:32768/dcim/interfaces/8/",
+                        "duplex": null,
+                        "enabled": true,
+                        "id": 8,
+                        "ip_addresses": [],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": null,
+                        "link_peers": [],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [],
+                        "mark_connected": false,
+                        "mgmt_only": false,
+                        "mode": null,
+                        "module": null,
+                        "mtu": null,
+                        "name": "SFP+ (10GE)",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": null,
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "SFP+ (10GE)",
+                            "value": "10gbase-x-sfpp"
+                        },
+                        "untagged_vlan": null,
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": null,
+                        "wwn": null
+                    }
+                ],
+                "is_virtual": false,
+                "locations": [],
+                "manufacturer": "cisco",
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "role": "core-switch",
+                "serial": "",
+                "services": [],
+                "site": "test-site",
+                "site_groups": [],
+                "status": {
+                    "label": "Staged",
+                    "value": "staged"
+                },
+                "tags": []
+            },
+            "issue-242": {
+                "asset_tag": "Null",
+                "device_type": "cisco-test",
+                "interfaces": [],
+                "is_virtual": false,
+                "locations": [],
+                "manufacturer": "cisco",
+                "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "role": "core-switch",
+                "serial": "",
+                "services": [],
+                "site": "test-site",
+                "site_groups": [],
+                "status": {
+                    "label": "Staged",
+                    "value": "staged"
+                },
+                "tags": [
+                    "first",
+                    "second",
+                    "third"
+                ]
+            },
+            "test100": {
+                "ansible_host": "2001::1:1",
+                "asset_tag": "123456789",
+                "device_type": "cisco-test",
+                "interfaces": [
+                    {
+                        "_occupied": false,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": null,
+                        "connected_endpoints_reachable": null,
+                        "connected_endpoints_type": null,
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 2,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "test100 (123456789)",
                             "id": 1,
-                            "name": {
-                                "__ansible_unsafe": "test100"
-                            }
+                            "name": "test100"
                         },
-                        "display": {
-                            "__ansible_unsafe": "GigabitEthernet1"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/dcim/interfaces/3/"
-                        },
+                        "display": "GigabitEthernet1",
+                        "display_url": "http://localhost:32768/dcim/interfaces/3/",
                         "duplex": null,
                         "enabled": true,
                         "id": 3,
                         "ip_addresses": [
                             {
-                                "address": {
-                                    "__ansible_unsafe": "172.16.180.1/24"
-                                },
-                                "comments": {
-                                    "__ansible_unsafe": ""
-                                },
+                                "address": "10.255.255.1/24",
+                                "comments": "",
                                 "custom_fields": {},
-                                "description": {
-                                    "__ansible_unsafe": ""
-                                },
-                                "display": {
-                                    "__ansible_unsafe": "172.16.180.1/24"
-                                },
-                                "display_url": {
-                                    "__ansible_unsafe": "http://localhost:32768/ipam/ip-addresses/1/"
-                                },
-                                "dns_name": {
-                                    "__ansible_unsafe": ""
-                                },
+                                "description": "",
+                                "display": "10.255.255.1/24",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/6/",
+                                "dns_name": "",
                                 "family": {
-                                    "label": {
-                                        "__ansible_unsafe": "IPv4"
-                                    },
+                                    "label": "IPv4",
+                                    "value": 4
+                                },
+                                "id": 6,
+                                "nat_inside": null,
+                                "nat_outside": [],
+                                "owner": null,
+                                "role": null,
+                                "status": {
+                                    "label": "Active",
+                                    "value": "active"
+                                },
+                                "tags": [],
+                                "tenant": null,
+                                "vrf": null
+                            },
+                            {
+                                "address": "172.16.180.1/24",
+                                "comments": "",
+                                "custom_fields": {},
+                                "description": "",
+                                "display": "172.16.180.1/24",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/1/",
+                                "dns_name": "",
+                                "family": {
+                                    "label": "IPv4",
                                     "value": 4
                                 },
                                 "id": 1,
@@ -709,12 +1553,8 @@
                                 "owner": null,
                                 "role": null,
                                 "status": {
-                                    "label": {
-                                        "__ansible_unsafe": "Active"
-                                    },
-                                    "value": {
-                                        "__ansible_unsafe": "active"
-                                    }
+                                    "label": "Active",
+                                    "value": "active"
                                 },
                                 "tags": [],
                                 "tenant": null,
@@ -722,25 +1562,17 @@
                             }
                         ],
                         "l2vpn_termination": null,
-                        "label": {
-                            "__ansible_unsafe": ""
-                        },
+                        "label": "",
                         "lag": null,
                         "link_peers": [],
                         "link_peers_type": null,
                         "mac_address": null,
                         "mac_addresses": [
                             {
-                                "description": {
-                                    "__ansible_unsafe": ""
-                                },
-                                "display": {
-                                    "__ansible_unsafe": "AA:BB:CC:DD:EE:FF"
-                                },
+                                "description": "",
+                                "display": "AA:BB:CC:DD:EE:FF",
                                 "id": 1,
-                                "mac_address": {
-                                    "__ansible_unsafe": "AA:BB:CC:DD:EE:FF"
-                                }
+                                "mac_address": "AA:BB:CC:DD:EE:FF"
                             }
                         ],
                         "mark_connected": false,
@@ -748,9 +1580,7 @@
                         "mode": null,
                         "module": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "GigabitEthernet1"
-                        },
+                        "name": "GigabitEthernet1",
                         "owner": null,
                         "parent": null,
                         "poe_mode": null,
@@ -766,12 +1596,8 @@
                         "tags": [],
                         "tx_power": null,
                         "type": {
-                            "label": {
-                                "__ansible_unsafe": "1000BASE-T (1GE)"
-                            },
-                            "value": {
-                                "__ansible_unsafe": "1000base-t"
-                            }
+                            "label": "1000BASE-T (1GE)",
+                            "value": "1000base-t"
                         },
                         "untagged_vlan": null,
                         "vdcs": [],
@@ -791,57 +1617,156 @@
                         "connected_endpoints_reachable": null,
                         "connected_endpoints_type": null,
                         "count_fhrp_groups": 0,
-                        "count_ipaddresses": 1,
+                        "count_ipaddresses": 6,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
+                        "description": "",
                         "device": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "test100 (123456789)"
-                            },
+                            "description": "",
+                            "display": "test100 (123456789)",
                             "id": 1,
-                            "name": {
-                                "__ansible_unsafe": "test100"
-                            }
+                            "name": "test100"
                         },
-                        "display": {
-                            "__ansible_unsafe": "GigabitEthernet2"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/dcim/interfaces/4/"
-                        },
+                        "display": "GigabitEthernet2",
+                        "display_url": "http://localhost:32768/dcim/interfaces/4/",
                         "duplex": null,
                         "enabled": true,
                         "id": 4,
                         "ip_addresses": [
                             {
-                                "address": {
-                                    "__ansible_unsafe": "2001::1:1/64"
-                                },
-                                "comments": {
-                                    "__ansible_unsafe": ""
-                                },
+                                "address": "10.10.0.1/16",
+                                "comments": "",
                                 "custom_fields": {},
-                                "description": {
-                                    "__ansible_unsafe": ""
-                                },
-                                "display": {
-                                    "__ansible_unsafe": "2001::1:1/64"
-                                },
-                                "display_url": {
-                                    "__ansible_unsafe": "http://localhost:32768/ipam/ip-addresses/2/"
-                                },
-                                "dns_name": {
-                                    "__ansible_unsafe": ""
-                                },
+                                "description": "",
+                                "display": "10.10.0.1/16",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/17/",
+                                "dns_name": "",
                                 "family": {
-                                    "label": {
-                                        "__ansible_unsafe": "IPv6"
-                                    },
+                                    "label": "IPv4",
+                                    "value": 4
+                                },
+                                "id": 17,
+                                "nat_inside": null,
+                                "nat_outside": [],
+                                "owner": null,
+                                "role": null,
+                                "status": {
+                                    "label": "Active",
+                                    "value": "active"
+                                },
+                                "tags": [],
+                                "tenant": null,
+                                "vrf": null
+                            },
+                            {
+                                "address": "10.10.0.2/16",
+                                "comments": "",
+                                "custom_fields": {},
+                                "description": "",
+                                "display": "10.10.0.2/16",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/22/",
+                                "dns_name": "",
+                                "family": {
+                                    "label": "IPv4",
+                                    "value": 4
+                                },
+                                "id": 22,
+                                "nat_inside": null,
+                                "nat_outside": [],
+                                "owner": null,
+                                "role": null,
+                                "status": {
+                                    "label": "Active",
+                                    "value": "active"
+                                },
+                                "tags": [],
+                                "tenant": null,
+                                "vrf": null
+                            },
+                            {
+                                "address": "10.10.200.30/16",
+                                "comments": "",
+                                "custom_fields": {},
+                                "description": "",
+                                "display": "10.10.200.30/16",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/16/",
+                                "dns_name": "",
+                                "family": {
+                                    "label": "IPv4",
+                                    "value": 4
+                                },
+                                "id": 16,
+                                "nat_inside": null,
+                                "nat_outside": [],
+                                "owner": null,
+                                "role": null,
+                                "status": {
+                                    "label": "Active",
+                                    "value": "active"
+                                },
+                                "tags": [],
+                                "tenant": null,
+                                "vrf": null
+                            },
+                            {
+                                "address": "10.10.200.31/16",
+                                "comments": "",
+                                "custom_fields": {},
+                                "description": "",
+                                "display": "10.10.200.31/16",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/21/",
+                                "dns_name": "",
+                                "family": {
+                                    "label": "IPv4",
+                                    "value": 4
+                                },
+                                "id": 21,
+                                "nat_inside": null,
+                                "nat_outside": [],
+                                "owner": null,
+                                "role": null,
+                                "status": {
+                                    "label": "Active",
+                                    "value": "active"
+                                },
+                                "tags": [],
+                                "tenant": null,
+                                "vrf": null
+                            },
+                            {
+                                "address": "192.168.100.2/24",
+                                "comments": "",
+                                "custom_fields": {},
+                                "description": "",
+                                "display": "192.168.100.2/24",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/18/",
+                                "dns_name": "",
+                                "family": {
+                                    "label": "IPv4",
+                                    "value": 4
+                                },
+                                "id": 18,
+                                "nat_inside": null,
+                                "nat_outside": [],
+                                "owner": null,
+                                "role": null,
+                                "status": {
+                                    "label": "Active",
+                                    "value": "active"
+                                },
+                                "tags": [],
+                                "tenant": null,
+                                "vrf": null
+                            },
+                            {
+                                "address": "2001::1:1/64",
+                                "comments": "",
+                                "custom_fields": {},
+                                "description": "",
+                                "display": "2001::1:1/64",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/2/",
+                                "dns_name": "",
+                                "family": {
+                                    "label": "IPv6",
                                     "value": 6
                                 },
                                 "id": 2,
@@ -850,12 +1775,8 @@
                                 "owner": null,
                                 "role": null,
                                 "status": {
-                                    "label": {
-                                        "__ansible_unsafe": "Active"
-                                    },
-                                    "value": {
-                                        "__ansible_unsafe": "active"
-                                    }
+                                    "label": "Active",
+                                    "value": "active"
                                 },
                                 "tags": [],
                                 "tenant": null,
@@ -863,37 +1784,23 @@
                             }
                         ],
                         "l2vpn_termination": null,
-                        "label": {
-                            "__ansible_unsafe": ""
-                        },
+                        "label": "",
                         "lag": null,
                         "link_peers": [],
                         "link_peers_type": null,
-                        "mac_address": null,
+                        "mac_address": "AA:AB:CC:DD:EE:FF",
                         "mac_addresses": [
                             {
-                                "description": {
-                                    "__ansible_unsafe": ""
-                                },
-                                "display": {
-                                    "__ansible_unsafe": "AA:AB:CC:DD:EE:FF"
-                                },
+                                "description": "",
+                                "display": "AA:AB:CC:DD:EE:FF",
                                 "id": 2,
-                                "mac_address": {
-                                    "__ansible_unsafe": "AA:AB:CC:DD:EE:FF"
-                                }
+                                "mac_address": "AA:AB:CC:DD:EE:FF"
                             },
                             {
-                                "description": {
-                                    "__ansible_unsafe": ""
-                                },
-                                "display": {
-                                    "__ansible_unsafe": "AA:BB:CC:DD:EE:FF"
-                                },
+                                "description": "",
+                                "display": "AA:BB:CC:DD:EE:FF",
                                 "id": 3,
-                                "mac_address": {
-                                    "__ansible_unsafe": "AA:BB:CC:DD:EE:FF"
-                                }
+                                "mac_address": "AA:BB:CC:DD:EE:FF"
                             }
                         ],
                         "mark_connected": false,
@@ -901,9 +1808,106 @@
                         "mode": null,
                         "module": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "GigabitEthernet2"
+                        "name": "GigabitEthernet2",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": {
+                            "description": "",
+                            "display": "AA:AB:CC:DD:EE:FF",
+                            "id": 2,
+                            "mac_address": "AA:AB:CC:DD:EE:FF"
                         },
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "1000BASE-T (1GE)",
+                            "value": "1000base-t"
+                        },
+                        "untagged_vlan": null,
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": null,
+                        "wwn": null
+                    },
+                    {
+                        "_occupied": true,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": [
+                            {
+                                "_occupied": true,
+                                "cable": null,
+                                "description": "",
+                                "device": {
+                                    "description": "",
+                                    "display": "Test Nexus One",
+                                    "id": 4,
+                                    "name": "Test Nexus One"
+                                },
+                                "display": "wlink1",
+                                "id": 6,
+                                "name": "wlink1"
+                            }
+                        ],
+                        "connected_endpoints_reachable": true,
+                        "connected_endpoints_type": "dcim.interface",
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 0,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "test100 (123456789)",
+                            "id": 1,
+                            "name": "test100"
+                        },
+                        "display": "wlink1",
+                        "display_url": "http://localhost:32768/dcim/interfaces/5/",
+                        "duplex": null,
+                        "enabled": true,
+                        "id": 5,
+                        "ip_addresses": [],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": null,
+                        "link_peers": [
+                            {
+                                "_occupied": true,
+                                "cable": null,
+                                "description": "",
+                                "device": {
+                                    "description": "",
+                                    "display": "Test Nexus One",
+                                    "id": 4,
+                                    "name": "Test Nexus One"
+                                },
+                                "display": "wlink1",
+                                "id": 6,
+                                "name": "wlink1"
+                            }
+                        ],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [],
+                        "mark_connected": false,
+                        "mgmt_only": false,
+                        "mode": null,
+                        "module": null,
+                        "mtu": null,
+                        "name": "wlink1",
                         "owner": null,
                         "parent": null,
                         "poe_mode": null,
@@ -919,12 +1923,80 @@
                         "tags": [],
                         "tx_power": null,
                         "type": {
-                            "label": {
-                                "__ansible_unsafe": "1000BASE-T (1GE)"
-                            },
-                            "value": {
-                                "__ansible_unsafe": "1000base-t"
-                            }
+                            "label": "IEEE 802.11a",
+                            "value": "ieee802.11a"
+                        },
+                        "untagged_vlan": null,
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": {
+                            "display": "Wireless Network One",
+                            "display_url": "http://localhost:32768/wireless/wireless-links/2/",
+                            "id": 2,
+                            "ssid": "Wireless Network One"
+                        },
+                        "wwn": null
+                    },
+                    {
+                        "_occupied": false,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": null,
+                        "connected_endpoints_reachable": null,
+                        "connected_endpoints_type": null,
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 0,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "test100 (123456789)",
+                            "id": 1,
+                            "name": "test100"
+                        },
+                        "display": "port-channel1",
+                        "display_url": "http://localhost:32768/dcim/interfaces/10/",
+                        "duplex": null,
+                        "enabled": true,
+                        "id": 10,
+                        "ip_addresses": [],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": null,
+                        "link_peers": [],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [],
+                        "mark_connected": false,
+                        "mgmt_only": false,
+                        "mode": {
+                            "label": "Access",
+                            "value": "access"
+                        },
+                        "module": null,
+                        "mtu": 1600,
+                        "name": "port-channel1",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": null,
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "Link Aggregation Group (LAG)",
+                            "value": "lag"
                         },
                         "untagged_vlan": null,
                         "vdcs": [],
@@ -946,48 +2018,48 @@
                         "count_fhrp_groups": 0,
                         "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
+                        "description": "",
                         "device": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "test100 (123456789)"
-                            },
+                            "description": "",
+                            "display": "test100 (123456789)",
                             "id": 1,
-                            "name": {
-                                "__ansible_unsafe": "test100"
-                            }
+                            "name": "test100"
                         },
-                        "display": {
-                            "__ansible_unsafe": "wlink1"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/dcim/interfaces/5/"
-                        },
+                        "display": "GigabitEthernet3",
+                        "display_url": "http://localhost:32768/dcim/interfaces/11/",
                         "duplex": null,
-                        "enabled": true,
-                        "id": 5,
+                        "enabled": false,
+                        "id": 11,
                         "ip_addresses": [],
                         "l2vpn_termination": null,
-                        "label": {
-                            "__ansible_unsafe": ""
+                        "label": "",
+                        "lag": {
+                            "_occupied": false,
+                            "cable": null,
+                            "device": {
+                                "display": "test100 (123456789)",
+                                "display_url": "http://localhost:32768/dcim/devices/1/",
+                                "id": 1,
+                                "name": "test100"
+                            },
+                            "display": "port-channel1",
+                            "display_url": "http://localhost:32768/dcim/interfaces/10/",
+                            "id": 10,
+                            "name": "port-channel1"
                         },
-                        "lag": null,
                         "link_peers": [],
                         "link_peers_type": null,
                         "mac_address": null,
                         "mac_addresses": [],
                         "mark_connected": false,
                         "mgmt_only": false,
-                        "mode": null,
-                        "module": null,
-                        "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "wlink1"
+                        "mode": {
+                            "label": "Access",
+                            "value": "access"
                         },
+                        "module": null,
+                        "mtu": 1600,
+                        "name": "GigabitEthernet3",
                         "owner": null,
                         "parent": null,
                         "poe_mode": null,
@@ -1003,12 +2075,240 @@
                         "tags": [],
                         "tx_power": null,
                         "type": {
-                            "label": {
-                                "__ansible_unsafe": "IEEE 802.11a"
+                            "label": "1000BASE-T (1GE)",
+                            "value": "1000base-t"
+                        },
+                        "untagged_vlan": null,
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": null,
+                        "wwn": null
+                    },
+                    {
+                        "_occupied": false,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": null,
+                        "connected_endpoints_reachable": null,
+                        "connected_endpoints_type": null,
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 0,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "test100 (123456789)",
+                            "id": 1,
+                            "name": "test100"
+                        },
+                        "display": "GigabitEthernet21",
+                        "display_url": "http://localhost:32768/dcim/interfaces/12/",
+                        "duplex": null,
+                        "enabled": false,
+                        "id": 12,
+                        "ip_addresses": [],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": null,
+                        "link_peers": [],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [],
+                        "mark_connected": false,
+                        "mgmt_only": true,
+                        "mode": {
+                            "label": "Tagged",
+                            "value": "tagged"
+                        },
+                        "module": null,
+                        "mtu": 1600,
+                        "name": "GigabitEthernet21",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": null,
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [
+                            {
+                                "description": "",
+                                "display": "Data (200)",
+                                "id": 2,
+                                "name": "Data",
+                                "vid": 200
                             },
-                            "value": {
-                                "__ansible_unsafe": "ieee802.11a"
+                            {
+                                "description": "",
+                                "display": "VoIP (300)",
+                                "id": 3,
+                                "name": "VoIP",
+                                "vid": 300
                             }
+                        ],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "1000BASE-T (1GE)",
+                            "value": "1000base-t"
+                        },
+                        "untagged_vlan": {
+                            "description": "",
+                            "display": "Wireless (100)",
+                            "id": 1,
+                            "name": "Wireless",
+                            "vid": 100
+                        },
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": null,
+                        "wwn": null
+                    },
+                    {
+                        "_occupied": false,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": null,
+                        "connected_endpoints_reachable": null,
+                        "connected_endpoints_type": null,
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 0,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "test100 (123456789)",
+                            "id": 1,
+                            "name": "test100"
+                        },
+                        "display": "GigabitEthernet4",
+                        "display_url": "http://localhost:32768/dcim/interfaces/14/",
+                        "duplex": null,
+                        "enabled": false,
+                        "id": 14,
+                        "ip_addresses": [],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": {
+                            "_occupied": false,
+                            "cable": null,
+                            "device": {
+                                "display": "test100 (123456789)",
+                                "display_url": "http://localhost:32768/dcim/devices/1/",
+                                "id": 1,
+                                "name": "test100"
+                            },
+                            "display": "port-channel1",
+                            "display_url": "http://localhost:32768/dcim/interfaces/10/",
+                            "id": 10,
+                            "name": "port-channel1"
+                        },
+                        "link_peers": [],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [],
+                        "mark_connected": false,
+                        "mgmt_only": false,
+                        "mode": {
+                            "label": "Access",
+                            "value": "access"
+                        },
+                        "module": null,
+                        "mtu": 1600,
+                        "name": "GigabitEthernet4",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": null,
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "1000BASE-T (1GE)",
+                            "value": "1000base-t"
+                        },
+                        "untagged_vlan": null,
+                        "vdcs": [],
+                        "vlan_translation_policy": null,
+                        "vrf": null,
+                        "wireless_lans": [],
+                        "wireless_link": null,
+                        "wwn": null
+                    },
+                    {
+                        "_occupied": true,
+                        "bridge": null,
+                        "bridge_interfaces": [],
+                        "cable": null,
+                        "cable_end": null,
+                        "connected_endpoints": null,
+                        "connected_endpoints_reachable": null,
+                        "connected_endpoints_type": null,
+                        "count_fhrp_groups": 0,
+                        "count_ipaddresses": 0,
+                        "custom_fields": {},
+                        "description": "",
+                        "device": {
+                            "description": "",
+                            "display": "test100 (123456789)",
+                            "id": 1,
+                            "name": "test100"
+                        },
+                        "display": "GigabitEthernet5",
+                        "display_url": "http://localhost:32768/dcim/interfaces/16/",
+                        "duplex": null,
+                        "enabled": true,
+                        "id": 16,
+                        "ip_addresses": [],
+                        "l2vpn_termination": null,
+                        "label": "",
+                        "lag": null,
+                        "link_peers": [],
+                        "link_peers_type": null,
+                        "mac_address": null,
+                        "mac_addresses": [],
+                        "mark_connected": true,
+                        "mgmt_only": false,
+                        "mode": null,
+                        "module": null,
+                        "mtu": null,
+                        "name": "GigabitEthernet5",
+                        "owner": null,
+                        "parent": null,
+                        "poe_mode": null,
+                        "poe_type": null,
+                        "primary_mac_address": null,
+                        "qinq_svlan": null,
+                        "rf_channel": null,
+                        "rf_channel_frequency": null,
+                        "rf_channel_width": null,
+                        "rf_role": null,
+                        "speed": null,
+                        "tagged_vlans": [],
+                        "tags": [],
+                        "tx_power": null,
+                        "type": {
+                            "label": "1000BASE-T (1GE)",
+                            "value": "1000base-t"
                         },
                         "untagged_vlan": null,
                         "vdcs": [],
@@ -1021,118 +2321,142 @@
                 ],
                 "is_virtual": false,
                 "locations": [
-                    {
-                        "__ansible_unsafe": "test-rack-group"
-                    },
-                    {
-                        "__ansible_unsafe": "parent-rack-group"
-                    }
+                    "test-rack-group",
+                    "parent-rack-group"
                 ],
-                "manufacturer": {
-                    "__ansible_unsafe": "cisco"
-                },
+                "manufacturer": "cisco",
                 "ntp_servers": [
-                    {
-                        "__ansible_unsafe": "pool.ntp.org"
-                    }
+                    "pool.ntp.org"
                 ],
+                "primary_ip4": "172.16.180.1",
+                "primary_ip6": "2001::1:1",
                 "regions": [
+                    "test-region",
+                    "parent-region"
+                ],
+                "role": "core-switch",
+                "serial": "FAB01234567",
+                "services": [
                     {
-                        "__ansible_unsafe": "test-region"
-                    },
-                    {
-                        "__ansible_unsafe": "parent-region"
+                        "comments": "",
+                        "custom_fields": {},
+                        "description": "",
+                        "display": "node-exporter (UDP/9100)",
+                        "display_url": "http://localhost:32768/ipam/services/3/",
+                        "id": 3,
+                        "ipaddresses": [
+                            {
+                                "address": "172.16.180.1/24",
+                                "description": "",
+                                "display": "172.16.180.1/24",
+                                "family": {
+                                    "label": "IPv4",
+                                    "value": 4
+                                },
+                                "id": 1
+                            }
+                        ],
+                        "name": "node-exporter",
+                        "owner": null,
+                        "parent": {
+                            "description": "",
+                            "display": "test100 (123456789)",
+                            "id": 1,
+                            "name": "test100"
+                        },
+                        "parent_object_id": 1,
+                        "parent_object_type": "dcim.device",
+                        "ports": [
+                            9100
+                        ],
+                        "protocol": {
+                            "label": "UDP",
+                            "value": "udp"
+                        },
+                        "tags": []
                     }
                 ],
-                "role": {
-                    "__ansible_unsafe": "core-switch"
-                },
-                "serial": {
-                    "__ansible_unsafe": "FAB01234567"
-                },
-                "services": [],
-                "site": {
-                    "__ansible_unsafe": "test-site"
-                },
+                "site": "test-site",
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "test100-vm": {
-                "cluster": {
-                    "__ansible_unsafe": "Test Cluster"
-                },
-                "cluster_group": {
-                    "__ansible_unsafe": "test-cluster-group"
-                },
-                "cluster_type": {
-                    "__ansible_unsafe": "test-cluster-type"
-                },
+                "cluster": "Test Cluster",
+                "cluster_group": "test-cluster-group",
+                "cluster_type": "test-cluster-type",
                 "disk": 170,
                 "interfaces": [
                     {
                         "bridge": null,
                         "count_fhrp_groups": 0,
-                        "count_ipaddresses": 0,
+                        "count_ipaddresses": 1,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
-                        "display": {
-                            "__ansible_unsafe": "Eth0"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/virtualization/interfaces/1/"
-                        },
-                        "enabled": true,
+                        "description": "Updated test100-vm Eth0 intf",
+                        "display": "Eth0",
+                        "display_url": "http://localhost:32768/virtualization/interfaces/1/",
+                        "enabled": false,
                         "id": 1,
-                        "ip_addresses": [],
+                        "ip_addresses": [
+                            {
+                                "address": "10.188.1.100/24",
+                                "comments": "",
+                                "custom_fields": {},
+                                "description": "",
+                                "display": "10.188.1.100/24",
+                                "display_url": "http://localhost:32768/ipam/ip-addresses/19/",
+                                "dns_name": "",
+                                "family": {
+                                    "label": "IPv4",
+                                    "value": 4
+                                },
+                                "id": 19,
+                                "nat_inside": null,
+                                "nat_outside": [],
+                                "owner": null,
+                                "role": null,
+                                "status": {
+                                    "label": "Active",
+                                    "value": "active"
+                                },
+                                "tags": [],
+                                "tenant": null,
+                                "vrf": null
+                            }
+                        ],
                         "l2vpn_termination": null,
                         "mac_address": null,
                         "mac_addresses": [
                             {
-                                "description": {
-                                    "__ansible_unsafe": ""
-                                },
-                                "display": {
-                                    "__ansible_unsafe": "BB:CC:DD:EE:FF:AA"
-                                },
+                                "description": "",
+                                "display": "BB:CC:DD:EE:FF:AA",
                                 "id": 4,
-                                "mac_address": {
-                                    "__ansible_unsafe": "BB:CC:DD:EE:FF:AA"
-                                }
+                                "mac_address": "BB:CC:DD:EE:FF:AA"
                             }
                         ],
-                        "mode": null,
-                        "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "Eth0"
+                        "mode": {
+                            "label": "Tagged",
+                            "value": "tagged"
                         },
+                        "mtu": 9000,
+                        "name": "Eth0",
                         "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
                         "qinq_svlan": null,
                         "tagged_vlans": [],
-                        "tags": [],
+                        "tags": [
+                            "schnozzberry"
+                        ],
                         "untagged_vlan": null,
                         "virtual_machine": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "test100-vm"
-                            },
+                            "description": "",
+                            "display": "test100-vm",
                             "id": 1,
-                            "name": {
-                                "__ansible_unsafe": "test100-vm"
-                            }
+                            "name": "test100-vm"
                         },
                         "vlan_translation_policy": null,
                         "vrf": null
@@ -1142,15 +2466,9 @@
                         "count_fhrp_groups": 0,
                         "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
-                        "display": {
-                            "__ansible_unsafe": "Eth1"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/virtualization/interfaces/2/"
-                        },
+                        "description": "",
+                        "display": "Eth1",
+                        "display_url": "http://localhost:32768/virtualization/interfaces/2/",
                         "enabled": true,
                         "id": 2,
                         "ip_addresses": [],
@@ -1158,35 +2476,21 @@
                         "mac_address": null,
                         "mac_addresses": [
                             {
-                                "description": {
-                                    "__ansible_unsafe": ""
-                                },
-                                "display": {
-                                    "__ansible_unsafe": "BB:BC:DD:EE:FF:AA"
-                                },
+                                "description": "",
+                                "display": "BB:BC:DD:EE:FF:AA",
                                 "id": 5,
-                                "mac_address": {
-                                    "__ansible_unsafe": "BB:BC:DD:EE:FF:AA"
-                                }
+                                "mac_address": "BB:BC:DD:EE:FF:AA"
                             },
                             {
-                                "description": {
-                                    "__ansible_unsafe": ""
-                                },
-                                "display": {
-                                    "__ansible_unsafe": "BB:CC:DD:EE:FF:AA"
-                                },
+                                "description": "",
+                                "display": "BB:CC:DD:EE:FF:AA",
                                 "id": 6,
-                                "mac_address": {
-                                    "__ansible_unsafe": "BB:CC:DD:EE:FF:AA"
-                                }
+                                "mac_address": "BB:CC:DD:EE:FF:AA"
                             }
                         ],
                         "mode": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "Eth1"
-                        },
+                        "name": "Eth1",
                         "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
@@ -1195,16 +2499,10 @@
                         "tags": [],
                         "untagged_vlan": null,
                         "virtual_machine": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "test100-vm"
-                            },
+                            "description": "",
+                            "display": "test100-vm",
                             "id": 1,
-                            "name": {
-                                "__ansible_unsafe": "test100-vm"
-                            }
+                            "name": "test100-vm"
                         },
                         "vlan_translation_policy": null,
                         "vrf": null
@@ -1214,15 +2512,9 @@
                         "count_fhrp_groups": 0,
                         "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
-                        "display": {
-                            "__ansible_unsafe": "Eth2"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/virtualization/interfaces/3/"
-                        },
+                        "description": "",
+                        "display": "Eth2",
+                        "display_url": "http://localhost:32768/virtualization/interfaces/3/",
                         "enabled": true,
                         "id": 3,
                         "ip_addresses": [],
@@ -1231,9 +2523,7 @@
                         "mac_addresses": [],
                         "mode": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "Eth2"
-                        },
+                        "name": "Eth2",
                         "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
@@ -1242,16 +2532,10 @@
                         "tags": [],
                         "untagged_vlan": null,
                         "virtual_machine": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "test100-vm"
-                            },
+                            "description": "",
+                            "display": "test100-vm",
                             "id": 1,
-                            "name": {
-                                "__ansible_unsafe": "test100-vm"
-                            }
+                            "name": "test100-vm"
                         },
                         "vlan_translation_policy": null,
                         "vrf": null
@@ -1261,15 +2545,9 @@
                         "count_fhrp_groups": 0,
                         "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
-                        "display": {
-                            "__ansible_unsafe": "Eth3"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/virtualization/interfaces/4/"
-                        },
+                        "description": "",
+                        "display": "Eth3",
+                        "display_url": "http://localhost:32768/virtualization/interfaces/4/",
                         "enabled": true,
                         "id": 4,
                         "ip_addresses": [],
@@ -1278,9 +2556,7 @@
                         "mac_addresses": [],
                         "mode": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "Eth3"
-                        },
+                        "name": "Eth3",
                         "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
@@ -1289,16 +2565,10 @@
                         "tags": [],
                         "untagged_vlan": null,
                         "virtual_machine": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "test100-vm"
-                            },
+                            "description": "",
+                            "display": "test100-vm",
                             "id": 1,
-                            "name": {
-                                "__ansible_unsafe": "test100-vm"
-                            }
+                            "name": "test100-vm"
                         },
                         "vlan_translation_policy": null,
                         "vrf": null
@@ -1308,15 +2578,9 @@
                         "count_fhrp_groups": 0,
                         "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
-                        "display": {
-                            "__ansible_unsafe": "Eth4"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/virtualization/interfaces/5/"
-                        },
+                        "description": "",
+                        "display": "Eth4",
+                        "display_url": "http://localhost:32768/virtualization/interfaces/5/",
                         "enabled": true,
                         "id": 5,
                         "ip_addresses": [],
@@ -1325,9 +2589,7 @@
                         "mac_addresses": [],
                         "mode": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "Eth4"
-                        },
+                        "name": "Eth4",
                         "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
@@ -1336,16 +2598,10 @@
                         "tags": [],
                         "untagged_vlan": null,
                         "virtual_machine": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "test100-vm"
-                            },
+                            "description": "",
+                            "display": "test100-vm",
                             "id": 1,
-                            "name": {
-                                "__ansible_unsafe": "test100-vm"
-                            }
+                            "name": "test100-vm"
                         },
                         "vlan_translation_policy": null,
                         "vrf": null
@@ -1354,46 +2610,56 @@
                 "is_virtual": true,
                 "locations": [],
                 "regions": [],
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
-                "services": [],
+                "serial": "",
+                "services": [
+                    {
+                        "comments": "",
+                        "custom_fields": {},
+                        "description": "",
+                        "display": "node-exporter-vm (TCP/9100)",
+                        "display_url": "http://localhost:32768/ipam/services/4/",
+                        "id": 4,
+                        "ipaddresses": [],
+                        "name": "node-exporter-vm",
+                        "owner": null,
+                        "parent": {
+                            "description": "",
+                            "display": "test100-vm",
+                            "id": 1,
+                            "name": "test100-vm"
+                        },
+                        "parent_object_id": 1,
+                        "parent_object_type": "virtualization.virtualmachine",
+                        "ports": [
+                            9100
+                        ],
+                        "protocol": {
+                            "label": "TCP",
+                            "value": "tcp"
+                        },
+                        "tags": []
+                    }
+                ],
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "test101-vm": {
-                "cluster": {
-                    "__ansible_unsafe": "Test Cluster"
-                },
-                "cluster_group": {
-                    "__ansible_unsafe": "test-cluster-group"
-                },
-                "cluster_type": {
-                    "__ansible_unsafe": "test-cluster-type"
-                },
+                "cluster": "Test Cluster",
+                "cluster_group": "test-cluster-group",
+                "cluster_type": "test-cluster-type",
                 "interfaces": [
                     {
                         "bridge": null,
                         "count_fhrp_groups": 0,
                         "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
-                        "display": {
-                            "__ansible_unsafe": "Eth0"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/virtualization/interfaces/6/"
-                        },
+                        "description": "",
+                        "display": "Eth0",
+                        "display_url": "http://localhost:32768/virtualization/interfaces/6/",
                         "enabled": true,
                         "id": 6,
                         "ip_addresses": [],
@@ -1402,9 +2668,7 @@
                         "mac_addresses": [],
                         "mode": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "Eth0"
-                        },
+                        "name": "Eth0",
                         "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
@@ -1413,16 +2677,10 @@
                         "tags": [],
                         "untagged_vlan": null,
                         "virtual_machine": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "test101-vm"
-                            },
+                            "description": "",
+                            "display": "test101-vm",
                             "id": 2,
-                            "name": {
-                                "__ansible_unsafe": "test101-vm"
-                            }
+                            "name": "test101-vm"
                         },
                         "vlan_translation_policy": null,
                         "vrf": null
@@ -1432,15 +2690,9 @@
                         "count_fhrp_groups": 0,
                         "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
-                        "display": {
-                            "__ansible_unsafe": "Eth1"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/virtualization/interfaces/7/"
-                        },
+                        "description": "",
+                        "display": "Eth1",
+                        "display_url": "http://localhost:32768/virtualization/interfaces/7/",
                         "enabled": true,
                         "id": 7,
                         "ip_addresses": [],
@@ -1449,9 +2701,7 @@
                         "mac_addresses": [],
                         "mode": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "Eth1"
-                        },
+                        "name": "Eth1",
                         "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
@@ -1460,16 +2710,10 @@
                         "tags": [],
                         "untagged_vlan": null,
                         "virtual_machine": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "test101-vm"
-                            },
+                            "description": "",
+                            "display": "test101-vm",
                             "id": 2,
-                            "name": {
-                                "__ansible_unsafe": "test101-vm"
-                            }
+                            "name": "test101-vm"
                         },
                         "vlan_translation_policy": null,
                         "vrf": null
@@ -1479,15 +2723,9 @@
                         "count_fhrp_groups": 0,
                         "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
-                        "display": {
-                            "__ansible_unsafe": "Eth2"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/virtualization/interfaces/8/"
-                        },
+                        "description": "",
+                        "display": "Eth2",
+                        "display_url": "http://localhost:32768/virtualization/interfaces/8/",
                         "enabled": true,
                         "id": 8,
                         "ip_addresses": [],
@@ -1496,9 +2734,7 @@
                         "mac_addresses": [],
                         "mode": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "Eth2"
-                        },
+                        "name": "Eth2",
                         "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
@@ -1507,16 +2743,10 @@
                         "tags": [],
                         "untagged_vlan": null,
                         "virtual_machine": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "test101-vm"
-                            },
+                            "description": "",
+                            "display": "test101-vm",
                             "id": 2,
-                            "name": {
-                                "__ansible_unsafe": "test101-vm"
-                            }
+                            "name": "test101-vm"
                         },
                         "vlan_translation_policy": null,
                         "vrf": null
@@ -1526,15 +2756,9 @@
                         "count_fhrp_groups": 0,
                         "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
-                        "display": {
-                            "__ansible_unsafe": "Eth3"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/virtualization/interfaces/9/"
-                        },
+                        "description": "",
+                        "display": "Eth3",
+                        "display_url": "http://localhost:32768/virtualization/interfaces/9/",
                         "enabled": true,
                         "id": 9,
                         "ip_addresses": [],
@@ -1543,9 +2767,7 @@
                         "mac_addresses": [],
                         "mode": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "Eth3"
-                        },
+                        "name": "Eth3",
                         "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
@@ -1554,16 +2776,10 @@
                         "tags": [],
                         "untagged_vlan": null,
                         "virtual_machine": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "test101-vm"
-                            },
+                            "description": "",
+                            "display": "test101-vm",
                             "id": 2,
-                            "name": {
-                                "__ansible_unsafe": "test101-vm"
-                            }
+                            "name": "test101-vm"
                         },
                         "vlan_translation_policy": null,
                         "vrf": null
@@ -1573,15 +2789,9 @@
                         "count_fhrp_groups": 0,
                         "count_ipaddresses": 0,
                         "custom_fields": {},
-                        "description": {
-                            "__ansible_unsafe": ""
-                        },
-                        "display": {
-                            "__ansible_unsafe": "Eth4"
-                        },
-                        "display_url": {
-                            "__ansible_unsafe": "http://localhost:32768/virtualization/interfaces/10/"
-                        },
+                        "description": "",
+                        "display": "Eth4",
+                        "display_url": "http://localhost:32768/virtualization/interfaces/10/",
                         "enabled": true,
                         "id": 10,
                         "ip_addresses": [],
@@ -1590,9 +2800,7 @@
                         "mac_addresses": [],
                         "mode": null,
                         "mtu": null,
-                        "name": {
-                            "__ansible_unsafe": "Eth4"
-                        },
+                        "name": "Eth4",
                         "owner": null,
                         "parent": null,
                         "primary_mac_address": null,
@@ -1601,16 +2809,10 @@
                         "tags": [],
                         "untagged_vlan": null,
                         "virtual_machine": {
-                            "description": {
-                                "__ansible_unsafe": ""
-                            },
-                            "display": {
-                                "__ansible_unsafe": "test101-vm"
-                            },
+                            "description": "",
+                            "display": "test101-vm",
                             "id": 2,
-                            "name": {
-                                "__ansible_unsafe": "test101-vm"
-                            }
+                            "name": "test101-vm"
                         },
                         "vlan_translation_policy": null,
                         "vrf": null
@@ -1619,110 +2821,72 @@
                 "is_virtual": true,
                 "locations": [],
                 "regions": [],
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
+                "serial": "",
                 "services": [],
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "test102-vm": {
-                "cluster": {
-                    "__ansible_unsafe": "Test Cluster"
-                },
-                "cluster_group": {
-                    "__ansible_unsafe": "test-cluster-group"
-                },
-                "cluster_type": {
-                    "__ansible_unsafe": "test-cluster-type"
-                },
+                "cluster": "Test Cluster",
+                "cluster_group": "test-cluster-group",
+                "cluster_type": "test-cluster-type",
                 "interfaces": [],
                 "is_virtual": true,
                 "locations": [],
                 "regions": [],
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
+                "serial": "",
                 "services": [],
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "test103-vm": {
-                "cluster": {
-                    "__ansible_unsafe": "Test Cluster"
-                },
-                "cluster_group": {
-                    "__ansible_unsafe": "test-cluster-group"
-                },
-                "cluster_type": {
-                    "__ansible_unsafe": "test-cluster-type"
-                },
+                "cluster": "Test Cluster",
+                "cluster_group": "test-cluster-group",
+                "cluster_type": "test-cluster-type",
                 "interfaces": [],
                 "is_virtual": true,
                 "locations": [],
                 "regions": [],
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
+                "serial": "",
                 "services": [],
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             },
             "test104-vm": {
-                "cluster": {
-                    "__ansible_unsafe": "Test Cluster 2"
-                },
-                "cluster_type": {
-                    "__ansible_unsafe": "test-cluster-type"
-                },
+                "cluster": "Test Cluster 2",
+                "cluster_type": "test-cluster-type",
                 "interfaces": [],
                 "is_virtual": true,
                 "locations": [],
                 "regions": [],
-                "serial": {
-                    "__ansible_unsafe": ""
-                },
+                "serial": "",
                 "services": [],
                 "site_groups": [],
                 "status": {
-                    "label": {
-                        "__ansible_unsafe": "Active"
-                    },
-                    "value": {
-                        "__ansible_unsafe": "active"
-                    }
+                    "label": "Active",
+                    "value": "active"
                 },
                 "tags": []
             }
-        },
-        "profile": "inventory_legacy"
+        }
     },
     "active": {
         "hosts": [
+            "Device Power Tests",
+            "Device Virtual Chassis Tests",
+            "Device Virtual Chassis Tests 2",
             "R1-Device",
             "Test Nexus One",
             "test100",
@@ -1732,23 +2896,33 @@
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm"
+            "test104-vm",
+            "Virtual Machine With Contact"
         ]
     },
     "all": {
         "children": [
             "ungrouped",
+            "site_with_contact",
             "test_site2",
             "other_region",
             "parent_region",
+            "region_with_contact",
             "other_site_group",
             "parent_site_group",
-            "Test_Rack_Site_2",
-            "test_rack_role",
+            "site_group_with_contact",
             "core_switch",
             "cisco_test",
             "cisco",
+            "staged",
             "active",
+            "first",
+            "second",
+            "third",
+            "nolookup",
+            "lookup",
+            "Test_Rack_Site_2",
+            "test_rack_role",
             "nexus_parent",
             "Test_Rack",
             "Test_Cluster_2",
@@ -1760,6 +2934,15 @@
     },
     "cisco": {
         "hosts": [
+            "b6b98683-14a0-4991-b4ac-b88e5fe81573",
+            "Device Power Tests",
+            "Device Virtual Chassis Tests",
+            "Device Virtual Chassis Tests 2",
+            "Device With Contact",
+            "FOR_SERVICE",
+            "issue-242",
+            "L1",
+            "L2",
             "R1-Device",
             "Test Nexus One",
             "test100",
@@ -1768,6 +2951,15 @@
     },
     "cisco_test": {
         "hosts": [
+            "b6b98683-14a0-4991-b4ac-b88e5fe81573",
+            "Device Power Tests",
+            "Device Virtual Chassis Tests",
+            "Device Virtual Chassis Tests 2",
+            "Device With Contact",
+            "FOR_SERVICE",
+            "issue-242",
+            "L1",
+            "L2",
             "R1-Device",
             "test100",
             "TestDeviceR1"
@@ -1775,10 +2967,24 @@
     },
     "core_switch": {
         "hosts": [
+            "b6b98683-14a0-4991-b4ac-b88e5fe81573",
+            "Device Power Tests",
+            "Device Virtual Chassis Tests",
+            "Device Virtual Chassis Tests 2",
+            "Device With Contact",
+            "FOR_SERVICE",
+            "issue-242",
+            "L1",
+            "L2",
             "R1-Device",
             "Test Nexus One",
             "test100",
             "TestDeviceR1"
+        ]
+    },
+    "first": {
+        "hosts": [
+            "issue-242"
         ]
     },
     "is_virtual": {
@@ -1788,12 +2994,23 @@
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm"
+            "test104-vm",
+            "Virtual Machine With Contact"
+        ]
+    },
+    "lookup": {
+        "hosts": [
+            "L2"
         ]
     },
     "nexus_parent": {
         "hosts": [
             "Test Nexus One"
+        ]
+    },
+    "nolookup": {
+        "hosts": [
+            "L1"
         ]
     },
     "parent_rack_group": {
@@ -1811,12 +3028,28 @@
             "test_site_group"
         ]
     },
+    "second": {
+        "hosts": [
+            "issue-242"
+        ]
+    },
+    "staged": {
+        "hosts": [
+            "b6b98683-14a0-4991-b4ac-b88e5fe81573",
+            "Device With Contact",
+            "FOR_SERVICE",
+            "issue-242",
+            "L1",
+            "L2"
+        ]
+    },
     "test_cluster_group": {
         "hosts": [
             "test100-vm",
             "test101-vm",
             "test102-vm",
-            "test103-vm"
+            "test103-vm",
+            "Virtual Machine With Contact"
         ]
     },
     "test_cluster_type": {
@@ -1826,7 +3059,8 @@
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm"
+            "test104-vm",
+            "Virtual Machine With Contact"
         ]
     },
     "test_rack_group": {
@@ -1843,17 +3077,44 @@
     },
     "test_region": {
         "children": [
+            "test_california",
             "test_site"
         ]
     },
     "test_site": {
         "children": [
+            "location_with_contact",
+            "office_building",
             "parent_rack_group"
+        ],
+        "hosts": [
+            "b6b98683-14a0-4991-b4ac-b88e5fe81573",
+            "Device Power Tests",
+            "Device Virtual Chassis Tests",
+            "Device Virtual Chassis Tests 2",
+            "Device With Contact",
+            "FOR_SERVICE",
+            "issue-242",
+            "L1"
         ]
     },
     "test_site2": {
+        "children": [
+            "office_building"
+        ],
         "hosts": [
+            "L2",
             "R1-Device"
+        ]
+    },
+    "test_site_group": {
+        "children": [
+            "test_california"
+        ]
+    },
+    "third": {
+        "hosts": [
+            "issue-242"
         ]
     }
 }
